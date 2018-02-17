@@ -4,8 +4,19 @@
 }
 
 #main-container {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 40px;
+
+  /* border: 1px solid black; */
+}
+
+.box {
+  background-color: beige;
+  border: 2px solid black;
 }
