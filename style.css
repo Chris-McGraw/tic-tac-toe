@@ -18,5 +18,52 @@
 
 .box {
   background-color: beige;
+}
+
+#top-left {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#top-mid {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+#top-right {
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+#center-left {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#center-mid {
   border: 2px solid black;
+}
+
+#center-right {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+#bottom-left {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+#bottom-mid {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+#bottom-right {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
 }
