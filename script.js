@@ -7,12 +7,12 @@ $(document).ready(function() {
 /* --------------- Function Declarations --------------- */
 
   $("#top-left").on("click", function() {
-    if(playerTurn === 1) {
+    if(playerTurn === 1 && $(this).html() === "") {
       $(this).append("<div class='box-styled'>" + "X" + "</div>");
 
       playerTurn = 2;
     }
-    else if(playerTurn === 2) {
+    else if(playerTurn === 2 && $(this).html() === "") {
       $(this).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
 
       playerTurn = 1;
@@ -20,12 +20,25 @@ $(document).ready(function() {
   });
 
   $("#top-mid").on("click", function() {
-    if(playerTurn === 1) {
+    if(playerTurn === 1 && $(this).html() === "") {
       $(this).append("<div class='box-styled'>" + "X" + "</div>");
 
       playerTurn = 2;
     }
-    else if(playerTurn === 2) {
+    else if(playerTurn === 2 && $(this).html() === "") {
+      $(this).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
+
+      playerTurn = 1;
+    }
+  });
+
+  $("#top-right").on("click", function() {
+    if(playerTurn === 1 && $(this).html() === "") {
+      $(this).append("<div class='box-styled'>" + "X" + "</div>");
+
+      playerTurn = 2;
+    }
+    else if(playerTurn === 2 && $(this).html() === "") {
       $(this).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
 
       playerTurn = 1;
