@@ -4,15 +4,29 @@ $(document).ready(function() {
 
   currentBox = "";
   playerTurn = 1;
+  gameOver = false;
 
 /* --------------- Function Declarations --------------- */
 
+function checkWinPlayerOne() {
+  if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+}
+
   function checkTurn() {
-    if($(currentBox).html() === "" && playerTurn === 1) {
+    if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
       $(currentBox).append("<div class='box-styled'>" + "X" + "</div>");
+
+
+      console.log($("#top-left").html());
+      checkWinPlayerOne();
+
       playerTurn = 2;
     }
-    else if($(currentBox).html() === "" && playerTurn === 2) {
+    else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
       $(currentBox).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
       playerTurn = 1;
     }
