@@ -9,25 +9,77 @@ $(document).ready(function() {
 /* --------------- Function Declarations --------------- */
 
 function checkWinPlayerOne() {
+/* ----- P1 Horizontal Win Conditions ----- */
   if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+
+  if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+
+  if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+/* ----- P1 Vertical Win Conditions ----- */
+  if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+
+  if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+
+  if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+/* ----- P1 Diagonal Win Conditions ----- */
+  if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    gameOver = true;
+  }
+
+  if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 }
 
+/* function checkWinPlayerTwo() {
+  if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
+    $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+    gameOver = true;
+  }
+} */
+
   function checkTurn() {
     if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
       $(currentBox).append("<div class='box-styled'>" + "X" + "</div>");
 
-
-      console.log($("#top-left").html());
       checkWinPlayerOne();
 
       playerTurn = 2;
     }
     else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
       $(currentBox).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
+
+      /* checkWinPlayerTwo() */
+
       playerTurn = 1;
     }
   }
