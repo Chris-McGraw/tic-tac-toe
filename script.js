@@ -35,4 +35,36 @@ $(document).ready(function() {
     checkTurn();
   });
 
+
+  $("#center-left").on("click", function() {
+    currentBox = $("#center-left");
+    checkTurn();
+  });
+
+  $("#center-mid").on("click", function() {
+    currentBox = $("#center-mid");
+    checkTurn();
+  });
+
+  $("#center-right").on("click", function() {
+    currentBox = $("#center-right");
+    checkTurn();
+  });
+
+
+  $("#bottom-left").on("click", function() {
+    currentBox = $("#bottom-left");
+    checkTurn();
+  });
+
+  $("#bottom-mid").on("click", function() {
+    currentBox = $("#bottom-mid");
+    checkTurn();
+  });
+
+  $("#bottom-right").on("click", function() {
+    currentBox = $("#bottom-right");
+    checkTurn();
+  });
+
 });
