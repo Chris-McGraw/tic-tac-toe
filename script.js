@@ -122,6 +122,56 @@ $(document).ready(function() {
 
       gameOver = true;
     }
+  /* ----- P2 Vertical Win Conditions ----- */
+    else if($("#top-left").children().html() === "O" && $("#center-left").children().html() === "O" && $("#bottom-left").children().html() === "O") {
+      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+      $("#top-left").addClass("box-styled-win");
+      $("#center-left").addClass("box-styled-win");
+      $("#bottom-left").addClass("box-styled-win");
+
+      gameOver = true;
+    }
+
+    else if($("#top-mid").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-mid").children().html() === "O") {
+      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+      $("#top-mid").addClass("box-styled-win");
+      $("#center-mid").addClass("box-styled-win");
+      $("#bottom-mid").addClass("box-styled-win");
+
+      gameOver = true;
+    }
+
+    else if($("#top-right").children().html() === "O" && $("#center-right").children().html() === "O" && $("#bottom-right").children().html() === "O") {
+      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+      $("#top-right").addClass("box-styled-win");
+      $("#center-right").addClass("box-styled-win");
+      $("#bottom-right").addClass("box-styled-win");
+
+      gameOver = true;
+    }
+  /* ----- P2 Diagonal Win Conditions ----- */
+    else if($("#top-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
+      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+      $("#top-left").addClass("box-styled-win");
+      $("#center-mid").addClass("box-styled-win");
+      $("#bottom-right").addClass("box-styled-win");
+
+      gameOver = true;
+    }
+
+    else if($("#top-right").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-left").children().html() === "O") {
+      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
+
+      $("#top-right").addClass("box-styled-win");
+      $("#center-mid").addClass("box-styled-win");
+      $("#bottom-left").addClass("box-styled-win");
+
+      gameOver = true;
+    }
   }
 
   function checkTurn() {
