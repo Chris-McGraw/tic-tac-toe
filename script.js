@@ -89,6 +89,14 @@ $(document).ready(function() {
 
       gameOver = true;
     }
+  /* ----- Draw Conditions ----- */
+    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
+    $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
+    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
+      $("#info-container").append("<div>"+ "DRAW" +"</div>");
+
+      gameOver = true;
+    }
   }
 
   function checkWinPlayerTwo() {
@@ -169,6 +177,14 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
+
+      gameOver = true;
+    }
+  /* ----- Draw Conditions ----- */
+    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
+    $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
+    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
+      $("#info-container").append("<div>"+ "DRAW" +"</div>");
 
       gameOver = true;
     }
