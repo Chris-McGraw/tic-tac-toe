@@ -16,43 +16,43 @@ function checkWinPlayerOne() {
     gameOver = true;
   }
 
-  if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
+  else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 
-  if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+  else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 /* ----- P1 Vertical Win Conditions ----- */
-  if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
+  else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 
-  if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
+  else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 
-  if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+  else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 /* ----- P1 Diagonal Win Conditions ----- */
-  if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+  else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
   }
 
-  if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
+  else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
     gameOver = true;
