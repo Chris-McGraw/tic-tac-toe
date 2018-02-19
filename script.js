@@ -13,11 +13,19 @@ function checkWinPlayerOne() {
   if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
+    $("#top-left").addClass("box-styled-win");
+    $("#top-mid").addClass("box-styled-win");
+    $("#top-right").addClass("box-styled-win");
+
     gameOver = true;
   }
 
   else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    $("#center-left").addClass("box-styled-win");
+    $("#center-mid").addClass("box-styled-win");
+    $("#center-right").addClass("box-styled-win");
 
     gameOver = true;
   }
@@ -25,11 +33,19 @@ function checkWinPlayerOne() {
   else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
+    $("#bottom-left").addClass("box-styled-win");
+    $("#bottom-mid").addClass("box-styled-win");
+    $("#bottom-right").addClass("box-styled-win");
+
     gameOver = true;
   }
 /* ----- P1 Vertical Win Conditions ----- */
   else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    $("#top-left").addClass("box-styled-win");
+    $("#center-left").addClass("box-styled-win");
+    $("#bottom-left").addClass("box-styled-win");
 
     gameOver = true;
   }
@@ -37,11 +53,19 @@ function checkWinPlayerOne() {
   else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
+    $("#top-mid").addClass("box-styled-win");
+    $("#center-mid").addClass("box-styled-win");
+    $("#bottom-mid").addClass("box-styled-win");
+
     gameOver = true;
   }
 
   else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    $("#top-right").addClass("box-styled-win");
+    $("#center-right").addClass("box-styled-win");
+    $("#bottom-right").addClass("box-styled-win");
 
     gameOver = true;
   }
@@ -49,11 +73,19 @@ function checkWinPlayerOne() {
   else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
+    $("#top-left").addClass("box-styled-win");
+    $("#center-mid").addClass("box-styled-win");
+    $("#bottom-right").addClass("box-styled-win");
+
     gameOver = true;
   }
 
   else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
     $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
+
+    $("#top-right").addClass("box-styled-win");
+    $("#center-mid").addClass("box-styled-win");
+    $("#bottom-left").addClass("box-styled-win");
 
     gameOver = true;
   }

@@ -48,6 +48,10 @@ body {
   color: red;
 }
 
+.box-styled-win {
+  background-color: #ffff99;
+}
+
 #top-left {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
