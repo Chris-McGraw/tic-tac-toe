@@ -62,8 +62,12 @@ body {
   cursor: pointer;
 }
 
-.game-mode:active {
+.game-mode:hover {
   color: darkGray;
+}
+
+.game-mode:active {
+  color: black;
 }
 
 #main-container {
