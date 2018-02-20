@@ -15,12 +15,40 @@ body {
   height: 50px;
   margin: auto;
   margin-top: 80px;
-  padding-top: 10px;
-  text-align: center;
-  font-size: 22px;
+
+  display: grid;
+  grid-template-rows: 25px 25px;
+  grid-template-columns: 225px 225px;
+
+  /* padding-top: 10px;
+  text-align: center; */
+
+  font-size: 18px;
   font-family: sans-serif;
   color: white;
   background-color: black;
+}
+
+#player-1-title {
+  padding-top: 2px;
+  text-align: center;
+  border-right: 1px solid darkGray;
+}
+
+#player-1-score {
+  text-align: center;
+  border-right: 1px solid darkGray;
+}
+
+#player-2-title {
+  padding-top: 2px;
+  text-align: center;
+  border-left: 1px solid darkGray;
+}
+
+#player-2-score {
+  text-align: center;
+  border-left: 1px solid darkGray;
 }
 
 #game-overlay {
@@ -102,6 +130,8 @@ body {
 
 .box-styled-win {
   background-color: #ffff99;
+
+  /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 #top-left {
