@@ -209,6 +209,10 @@ $(document).ready(function() {
 
 /* --------------- Event Handlers --------------- */
 
+  $("#multi-player").on("click", function() {
+    $("#game-overlay").toggleClass("hidden");
+  });
+
   $("#top-left").on("click", function() {
     currentBox = $("#top-left");
     checkTurn();
