@@ -210,7 +210,11 @@ $(document).ready(function() {
 /* --------------- Event Handlers --------------- */
 
   $("#multi-player").on("click", function() {
-    $("#game-overlay").toggleClass("hidden");
+    $(".game-title").remove();
+    $("#single-player").remove();
+    $("#multi-player").remove();
+
+    /* $("#game-overlay").toggleClass("hidden"); */
   });
 
   $("#top-left").on("click", function() {
