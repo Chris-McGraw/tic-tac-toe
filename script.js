@@ -221,8 +221,13 @@ $(document).ready(function() {
 
     $("#symbol-X").on("click", function() {
       $("#game-overlay").toggleClass("hidden");
+
+      $("#info-container").append("<div id='player-1-title'>Player 1 :</div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2 :</div>");
+      $("#info-container").append("<div id='player-1-score'>0</div>");
+      $("#info-container").append("<div id='player-2-score'>0</div>");
     });
-    
+
   });
 
 
