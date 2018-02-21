@@ -11,49 +11,6 @@ body {
   overflow: hidden;
 }
 
-/* ---------------------------- Info Container ---------------------------- */
-
-#info-container {
-  width: 450px;
-  height: 50px;
-  margin: auto;
-  margin-top: 80px;
-
-  display: grid;
-  grid-template-rows: 25px 25px;
-  grid-template-columns: 225px 225px;
-
-  /* padding-top: 10px;
-  text-align: center; */
-
-  font-size: 18px;
-  font-family: sans-serif;
-  color: white;
-  background-color: black;
-}
-
-#player-1-title {
-  padding-top: 2px;
-  text-align: center;
-  border-right: 1px solid darkGray;
-}
-
-#player-1-score {
-  text-align: center;
-  border-right: 1px solid darkGray;
-}
-
-#player-2-title {
-  padding-top: 2px;
-  text-align: center;
-  border-left: 1px solid darkGray;
-}
-
-#player-2-score {
-  text-align: center;
-  border-left: 1px solid darkGray;
-}
-
 /* ----------------------------- Game Overlay ----------------------------- */
 
 #game-overlay {
@@ -101,7 +58,7 @@ body {
   color: white;
 }
 
-/* ------------------------- Player Symbol Choice ------------------------- */
+/* ------------------------- Symbol Choice Screen ------------------------- */
 
 .symbol-choice-title {
   position: relative;
@@ -127,7 +84,6 @@ span {
   position: relative;
   top: 12px;
   font-size: 60px;
-
   cursor: pointer;
 }
 
@@ -169,6 +125,46 @@ span {
     0.75px -0.75px 0 darkGray,
     -0.75px 0.75px 0 darkGray,
     0.75px 0.75px 0 darkGray;
+}
+
+/* ---------------------------- Info Container ---------------------------- */
+
+#info-container {
+  display: grid;
+  grid-template-rows: 25px 25px;
+  grid-template-columns: 225px 225px;
+  width: 450px;
+  height: 50px;
+  margin: auto;
+  margin-top: 80px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  background-color: black;
+}
+
+#player-1-title {
+  padding-top: 2px;
+  text-align: center;
+
+}
+
+#player-1-score {
+  text-align: center;
+}
+
+#player-2-title {
+  padding-top: 2px;
+  text-align: center;
+
+}
+
+#player-2-score {
+  text-align: center;
+}
+
+.active-player {
+  background-color: darkGray;
 }
 
 /* ------------------------------ Game Board ------------------------------ */
