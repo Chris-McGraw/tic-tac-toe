@@ -98,7 +98,7 @@ body {
 }
 
 .game-mode:active {
-  color: black;
+  color: white;
 }
 
 /* ------------------------- Player Symbol Choice ------------------------- */
@@ -106,7 +106,6 @@ body {
 .symbol-choice-title {
   position: relative;
   top: 50px;
-
   margin: auto;
   text-align: center;
   font-size: 48px;
@@ -117,7 +116,6 @@ body {
 .symbol-choice {
   position: relative;
   top: 120px;
-
   margin: auto;
   text-align: center;
   font-size: 30px;
@@ -128,8 +126,49 @@ body {
 span {
   position: relative;
   top: 12px;
-
   font-size: 60px;
+
+  cursor: pointer;
+}
+
+#symbol-X {
+  color: black;
+}
+
+#symbol-O {
+  color: red;
+}
+
+#symbol-X:hover {
+  text-shadow:
+    -0.5px -0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white;
+}
+
+#symbol-O:hover {
+  text-shadow:
+    -0.75px -0.75px 0 white,
+    0.75px -0.75px 0 white,
+    -0.75px 0.75px 0 white,
+    0.75px 0.75px 0 white;
+}
+
+#symbol-X:active {
+  text-shadow:
+    -0.5px -0.5px 0 darkGray,
+    0.5px -0.5px 0 darkGray,
+    -0.5px 0.5px 0 darkGray,
+    0.5px 0.5px 0 darkGray;
+}
+
+#symbol-O:active {
+  text-shadow:
+    -0.75px -0.75px 0 darkGray,
+    0.75px -0.75px 0 darkGray,
+    -0.75px 0.75px 0 darkGray,
+    0.75px 0.75px 0 darkGray;
 }
 
 /* ------------------------------ Game Board ------------------------------ */

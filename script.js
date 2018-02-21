@@ -215,10 +215,12 @@ $(document).ready(function() {
     $("#multi-player").remove();
 
     $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
-    $("#game-overlay").append("<div class='symbol-choice'>" + "<span>X</span> or " + "<span>O</span></div>"); 
+    $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
 
     /* $("#game-overlay").toggleClass("hidden"); */
   });
+
+
 
   $("#top-left").on("click", function() {
     currentBox = $("#top-left");
