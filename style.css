@@ -2,35 +2,66 @@
   margin: 0;
   padding: 0;
   user-select: none;
+
+  /* border: 1px solid red; */
 }
 
 body {
   background-color: white;
-
   overflow: hidden;
 }
+
+/* ---------------------------- Info Container ---------------------------- */
 
 #info-container {
   width: 450px;
   height: 50px;
   margin: auto;
   margin-top: 80px;
-  padding-top: 10px;
-  text-align: center;
-  font-size: 22px;
+
+  display: grid;
+  grid-template-rows: 25px 25px;
+  grid-template-columns: 225px 225px;
+
+  /* padding-top: 10px;
+  text-align: center; */
+
+  font-size: 18px;
   font-family: sans-serif;
   color: white;
   background-color: black;
 }
+
+#player-1-title {
+  padding-top: 2px;
+  text-align: center;
+  border-right: 1px solid darkGray;
+}
+
+#player-1-score {
+  text-align: center;
+  border-right: 1px solid darkGray;
+}
+
+#player-2-title {
+  padding-top: 2px;
+  text-align: center;
+  border-left: 1px solid darkGray;
+}
+
+#player-2-score {
+  text-align: center;
+  border-left: 1px solid darkGray;
+}
+
+/* ----------------------------- Game Overlay ----------------------------- */
 
 #game-overlay {
   position: relative;
   width: 450px;
   height: 450px;
   margin: auto;
-
-  background-color: rgba(0, 0, 0, 0.7);
-
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -38,10 +69,11 @@ body {
   visibility: hidden;
 }
 
+/* --------------------------- Game Start Screen --------------------------- */
+
 .game-title {
   position: relative;
   top: 42px;
-
   text-align: center;
   font-size: 66px;
   font-family: sans-serif;
@@ -51,14 +83,13 @@ body {
 .game-mode {
   position: relative;
   top: 76px;
-
+  width: 150px;
+  margin: auto;
   margin-top: 20px;
-
   text-align: center;
   font-size: 38px;
   font-family: sans-serif;
   color: white;
-
   cursor: pointer;
 }
 
@@ -67,20 +98,90 @@ body {
 }
 
 .game-mode:active {
+  color: white;
+}
+
+/* ------------------------- Player Symbol Choice ------------------------- */
+
+.symbol-choice-title {
+  position: relative;
+  top: 50px;
+  margin: auto;
+  text-align: center;
+  font-size: 48px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.symbol-choice {
+  position: relative;
+  top: 120px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  font-family: sans-serif;
+  color: white;
+}
+
+span {
+  position: relative;
+  top: 12px;
+  font-size: 60px;
+
+  cursor: pointer;
+}
+
+#symbol-X {
   color: black;
 }
+
+#symbol-O {
+  color: red;
+}
+
+#symbol-X:hover {
+  text-shadow:
+    -0.5px -0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px 0.5px 0 white;
+}
+
+#symbol-O:hover {
+  text-shadow:
+    -0.75px -0.75px 0 white,
+    0.75px -0.75px 0 white,
+    -0.75px 0.75px 0 white,
+    0.75px 0.75px 0 white;
+}
+
+#symbol-X:active {
+  text-shadow:
+    -0.5px -0.5px 0 darkGray,
+    0.5px -0.5px 0 darkGray,
+    -0.5px 0.5px 0 darkGray,
+    0.5px 0.5px 0 darkGray;
+}
+
+#symbol-O:active {
+  text-shadow:
+    -0.75px -0.75px 0 darkGray,
+    0.75px -0.75px 0 darkGray,
+    -0.75px 0.75px 0 darkGray,
+    0.75px 0.75px 0 darkGray;
+}
+
+/* ------------------------------ Game Board ------------------------------ */
 
 #main-container {
   position: relative;
   top: -450px;
-
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-template-rows: 150px 150px 150px;
   width: 450px;
   height: 450px;
   margin: auto;
-
   z-index: 0;
 }
 
