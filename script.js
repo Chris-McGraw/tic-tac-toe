@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-/* --------------- Variable Declarations --------------- */
+/* ------------------------- Variable Declarations ------------------------- */
 
   currentBox = "";
   playerTurn = 1;
   gameOver = false;
 
-/* --------------- Function Declarations --------------- */
+/* ------------------------- Function Declarations ------------------------- */
 
   function checkWinPlayerOne() {
   /* ----- P1 Horizontal Win Conditions ----- */
@@ -99,6 +99,7 @@ $(document).ready(function() {
     }
   }
 
+
   function checkWinPlayerTwo() {
   /* ----- P2 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
@@ -190,92 +191,109 @@ $(document).ready(function() {
     }
   }
 
-  function checkTurn() {
+
+  function playerAction() {
     if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
       $(currentBox).append("<div class='box-styled'>" + "X" + "</div>");
-
       checkWinPlayerOne();
-
       playerTurn = 2;
     }
     else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
       $(currentBox).append("<div class='box-styled box-styled-player-2'>" + "O" + "</div>");
-
       checkWinPlayerTwo();
-
       playerTurn = 1;
     }
   }
 
-/* --------------- Event Handlers --------------- */
+
+  function checkTurn() {
+    if(gameOver === false && playerTurn === 1) {
+      $("#player-2-title").removeClass("active-player");
+      $("#player-2-score").removeClass("active-player");
+      $("#player-1-title").addClass("active-player");
+      $("#player-1-score").addClass("active-player");
+    }
+    else if(gameOver === false && playerTurn === 2) {
+      $("#player-1-title").removeClass("active-player");
+      $("#player-1-score").removeClass("active-player");
+      $("#player-2-title").addClass("active-player");
+      $("#player-2-score").addClass("active-player");
+    }
+  }
+
+/* ------------------------ Overlay Event Handlers ------------------------ */
 
   $("#multi-player").on("click", function() {
     $(".game-title").remove();
     $("#single-player").remove();
     $("#multi-player").remove();
-
     $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
     $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
 
-    /* $("#game-overlay").toggleClass("hidden"); */
-
     $("#symbol-X").on("click", function() {
       $("#game-overlay").toggleClass("hidden");
-
-      $("#info-container").append("<div id='player-1-title'>Player 1 :</div>");
-      $("#info-container").append("<div id='player-2-title'>Player 2 :</div>");
-      $("#info-container").append("<div id='player-1-score'>0</div>");
+      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
+      $("#info-container").append("<div id='player-1-score' class='active-player'>0</div>");
       $("#info-container").append("<div id='player-2-score'>0</div>");
     });
-
   });
 
-
+/* ----------------------- Game Board Event Handlers ----------------------- */
 
   $("#top-left").on("click", function() {
     currentBox = $("#top-left");
+    playerAction();
     checkTurn();
   });
 
   $("#top-mid").on("click", function() {
     currentBox = $("#top-mid");
+    playerAction();
     checkTurn();
   });
 
   $("#top-right").on("click", function() {
     currentBox = $("#top-right");
+    playerAction();
     checkTurn();
   });
 
 
   $("#center-left").on("click", function() {
     currentBox = $("#center-left");
+    playerAction();
     checkTurn();
   });
 
   $("#center-mid").on("click", function() {
     currentBox = $("#center-mid");
+    playerAction();
     checkTurn();
   });
 
   $("#center-right").on("click", function() {
     currentBox = $("#center-right");
+    playerAction();
     checkTurn();
   });
 
 
   $("#bottom-left").on("click", function() {
     currentBox = $("#bottom-left");
+    playerAction();
     checkTurn();
   });
 
   $("#bottom-mid").on("click", function() {
     currentBox = $("#bottom-mid");
+    playerAction();
     checkTurn();
   });
 
   $("#bottom-right").on("click", function() {
     currentBox = $("#bottom-right");
+    playerAction();
     checkTurn();
   });
 

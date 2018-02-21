@@ -146,23 +146,25 @@ span {
 #player-1-title {
   padding-top: 2px;
   text-align: center;
-  border-right: 1px solid darkGray;
+
 }
 
 #player-1-score {
   text-align: center;
-  border-right: 1px solid darkGray;
 }
 
 #player-2-title {
   padding-top: 2px;
   text-align: center;
-  border-left: 1px solid darkGray;
+
 }
 
 #player-2-score {
   text-align: center;
-  border-left: 1px solid darkGray;
+}
+
+.active-player {
+  background-color: darkGray;
 }
 
 /* ------------------------------ Game Board ------------------------------ */
