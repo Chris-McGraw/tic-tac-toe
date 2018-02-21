@@ -218,6 +218,11 @@ $(document).ready(function() {
     $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
 
     /* $("#game-overlay").toggleClass("hidden"); */
+
+    $("#symbol-X").on("click", function() {
+      $("#game-overlay").toggleClass("hidden");
+    });
+    
   });
 
 
