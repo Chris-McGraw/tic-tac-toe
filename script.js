@@ -214,6 +214,9 @@ $(document).ready(function() {
     $("#single-player").remove();
     $("#multi-player").remove();
 
+    $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
+    $("#game-overlay").append("<div class='symbol-choice'>" + "<span>X</span> or " + "<span>O</span></div>"); 
+
     /* $("#game-overlay").toggleClass("hidden"); */
   });
 
