@@ -3,6 +3,8 @@ $(document).ready(function() {
 /* ------------------------- Variable Declarations ------------------------- */
 
   currentBox = "";
+  playerOneSymbol = "";
+  playerTwoSymbol = "";
   playerTurn = 1;
   gameOver = false;
   playerOneScore = 0;
@@ -88,6 +90,13 @@ $(document).ready(function() {
     $("#multi-player").on("click", function() {
       advanceScreenToSymbolChoice();
       $("#symbol-X").on("click", function() {
+        playerOneSymbol = "X";
+        playerTwoSymbol = "O";
+        advanceScreenToGameBoard();
+      });
+      $("#symbol-O").on("click", function() {
+        playerOneSymbol = "O";
+        playerTwoSymbol = "X";
         advanceScreenToGameBoard();
       });
     });
@@ -96,7 +105,6 @@ $(document).ready(function() {
 
   function playerOneWin() {
     gameOver = true;
-
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
 
@@ -108,7 +116,6 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
@@ -117,7 +124,6 @@ $(document).ready(function() {
 
   function playerTwoWin() {
     gameOver = true;
-
     playerTwoScore++;
     $("#player-2-score").html(playerTwoScore);
 
@@ -129,7 +135,6 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
@@ -138,6 +143,7 @@ $(document).ready(function() {
 
   function playerDraw() {
     gameOver = true;
+
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Draw</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
@@ -146,158 +152,213 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
   }
 
 
-  function checkWinPlayerOne() {
-  /* ----- P1 Horizontal Win Conditions ----- */
+  function checkWin() {
+  /* ----- X Symbol Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
 
     else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
 
     else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
-  /* ----- P1 Vertical Win Conditions ----- */
+  /* ----- X Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
-  /* ----- P1 Diagonal Win Conditions ----- */
+  /* ----- X Symbol Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
-      playerOneWin();
+      if(playerOneSymbol === "X") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "X") {
+        playerTwoWin();
+      }
     }
-  /* ----- Draw Conditions ----- */
-    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
-    $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
-    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
 
-      playerDraw();
-    }
-  }
-
-
-  function checkWinPlayerTwo() {
-  /* ----- P2 Horizontal Win Conditions ----- */
-    if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
+  /* ----- O Symbol Horizontal Win Conditions ----- */
+    else if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
 
     else if($("#center-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#center-right").children().html() === "O") {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
 
     else if($("#bottom-left").children().html() === "O" && $("#bottom-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
-  /* ----- P2 Vertical Win Conditions ----- */
+  /* ----- O Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-left").children().html() === "O" && $("#bottom-left").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-mid").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-mid").children().html() === "O") {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-right").children().html() === "O" && $("#center-right").children().html() === "O" && $("#bottom-right").children().html() === "O") {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
-  /* ----- P2 Diagonal Win Conditions ----- */
+  /* ----- O Symbol Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
 
     else if($("#top-right").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-left").children().html() === "O") {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
-      playerTwoWin();
+      if(playerOneSymbol === "O") {
+        playerOneWin();
+      }
+      else if(playerTwoSymbol === "O") {
+        playerTwoWin();
+      }
     }
-  /* ----- Draw Conditions ----- */
-    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
-    $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
-    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
 
+  /* ----- Player Draw Conditions ----- */
+    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" &&
+    $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
+    $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
+    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" &&
+    $("#bottom-right").html() !== "") {
       playerDraw();
     }
   }
@@ -305,13 +366,23 @@ $(document).ready(function() {
 
   function playerAction() {
     if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
-      $(currentBox).append("<div class='box-styled'>X</div>");
-      checkWinPlayerOne();
+      if(playerOneSymbol === "X") {
+        $(currentBox).append("<div class='box-styled'>X</div>");
+      }
+      else if(playerOneSymbol === "O") {
+        $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+      checkWin();
       playerTurn = 2;
     }
     else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
-      $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
-      checkWinPlayerTwo();
+      if(playerTwoSymbol === "X") {
+        $(currentBox).append("<div class='box-styled'>X</div>");
+      }
+      else if(playerTwoSymbol === "O") {
+        $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+      checkWin();
       playerTurn = 1;
     }
   }
@@ -337,6 +408,13 @@ $(document).ready(function() {
   $("#multi-player").on("click", function() {
     advanceScreenToSymbolChoice();
     $("#symbol-X").on("click", function() {
+      playerOneSymbol = "X";
+      playerTwoSymbol = "O";
+      advanceScreenToGameBoard();
+    });
+    $("#symbol-O").on("click", function() {
+      playerOneSymbol = "O";
+      playerTwoSymbol = "X";
       advanceScreenToGameBoard();
     });
   });
@@ -361,7 +439,6 @@ $(document).ready(function() {
     checkTurn();
   });
 
-
   $("#center-left").on("click", function() {
     currentBox = $("#center-left");
     playerAction();
@@ -379,7 +456,6 @@ $(document).ready(function() {
     playerAction();
     checkTurn();
   });
-
 
   $("#bottom-left").on("click", function() {
     currentBox = $("#bottom-left");
