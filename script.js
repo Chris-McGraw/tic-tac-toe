@@ -28,6 +28,31 @@ $(document).ready(function() {
   }
 
 
+  function advanceScreenRematch() {
+    gameOver = false;
+    playerTurn = 1;
+    $(".player-win-title").remove();
+    $("#play-again").remove();
+    $("#quit").remove();
+    $("#game-overlay").toggleClass("hidden");
+    $("#player-2-title").removeClass("active-player");
+    $("#player-2-score").removeClass("active-player");
+    $("#player-1-title").addClass("active-player");
+    $("#player-1-score").addClass("active-player");
+    $(".box-styled").remove();
+    $(".box-styled-player-2").remove();
+    $("#top-left").removeClass("box-styled-win");
+    $("#top-mid").removeClass("box-styled-win");
+    $("#top-right").removeClass("box-styled-win");
+    $("#center-left").removeClass("box-styled-win");
+    $("#center-mid").removeClass("box-styled-win");
+    $("#center-right").removeClass("box-styled-win");
+    $("#bottom-left").removeClass("box-styled-win");
+    $("#bottom-mid").removeClass("box-styled-win");
+    $("#bottom-right").removeClass("box-styled-win");
+  }
+
+
   function playerOneWin() {
     gameOver = true;
     $("#game-overlay").toggleClass("hidden");
@@ -36,26 +61,33 @@ $(document).ready(function() {
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
     $("#play-again").on("click", function() {
-      gameOver = false;
-      playerTurn = 1;
-      $(".player-win-title").remove();
-      $("#play-again").remove();
-      $("#quit").remove();
-      $("#game-overlay").toggleClass("hidden");
-      $(".box-styled").remove();
-      $(".box-styled-player-2").remove();
+      advanceScreenRematch();
+    });
+  }
 
-      $("#top-left").removeClass("box-styled-win");
-      $("#top-mid").removeClass("box-styled-win");
-      $("#top-right").removeClass("box-styled-win");
 
-      $("#center-left").removeClass("box-styled-win");
-      $("#center-mid").removeClass("box-styled-win");
-      $("#center-right").removeClass("box-styled-win");
+  function playerTwoWin() {
+    gameOver = true;
+    $("#game-overlay").toggleClass("hidden");
+    $("#game-overlay").append("<div class='player-win-title'>Player Two Wins</div>");
+    $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
+    $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
-      $("#bottom-left").removeClass("box-styled-win");
-      $("#bottom-mid").removeClass("box-styled-win");
-      $("#bottom-right").removeClass("box-styled-win");
+    $("#play-again").on("click", function() {
+      advanceScreenRematch();
+    });
+  }
+
+
+  function playerDraw() {
+    gameOver = true;
+    $("#game-overlay").toggleClass("hidden");
+    $("#game-overlay").append("<div class='player-win-title'>Draw</div>");
+    $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
+    $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
+
+    $("#play-again").on("click", function() {
+      advanceScreenRematch();
     });
   }
 
@@ -63,7 +95,6 @@ $(document).ready(function() {
   function checkWinPlayerOne() {
   /* ----- P1 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
-
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
@@ -72,7 +103,6 @@ $(document).ready(function() {
     }
 
     else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
-
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
@@ -81,7 +111,6 @@ $(document).ready(function() {
     }
 
     else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -90,7 +119,6 @@ $(document).ready(function() {
     }
   /* ----- P1 Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
-
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
@@ -99,7 +127,6 @@ $(document).ready(function() {
     }
 
     else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
-
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
@@ -108,7 +135,6 @@ $(document).ready(function() {
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -117,7 +143,6 @@ $(document).ready(function() {
     }
   /* ----- P1 Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -126,7 +151,6 @@ $(document).ready(function() {
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
-
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
@@ -138,9 +162,7 @@ $(document).ready(function() {
     $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
     $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
 
-      gameOver = true;
-
-      $("#game-overlay").toggleClass("hidden");
+      playerDraw();
     }
   }
 
@@ -148,92 +170,74 @@ $(document).ready(function() {
   function checkWinPlayerTwo() {
   /* ----- P2 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
 
     else if($("#center-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#center-right").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
 
     else if($("#bottom-left").children().html() === "O" && $("#bottom-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
   /* ----- P2 Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-left").children().html() === "O" && $("#bottom-left").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
 
     else if($("#top-mid").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-mid").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
 
     else if($("#top-right").children().html() === "O" && $("#center-right").children().html() === "O" && $("#bottom-right").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
   /* ----- P2 Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
 
     else if($("#top-right").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-left").children().html() === "O") {
-      $("#info-container").append("<div>"+ "P2 WINS" +"</div>");
-
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
 
-      gameOver = true;
+      playerTwoWin();
     }
   /* ----- Draw Conditions ----- */
     else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
     $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
     $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
 
-      gameOver = true;
-
-      $("#game-overlay").toggleClass("hidden");
+      playerDraw();
     }
   }
 
