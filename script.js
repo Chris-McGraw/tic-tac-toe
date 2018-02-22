@@ -30,22 +30,32 @@ $(document).ready(function() {
 
   function playerOneWin() {
     gameOver = true;
-
     $("#game-overlay").toggleClass("hidden");
-
     $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
     $("#play-again").on("click", function() {
+      gameOver = false;
+      playerTurn = 1;
+      $(".player-win-title").remove();
+      $("#play-again").remove();
+      $("#quit").remove();
       $("#game-overlay").toggleClass("hidden");
-
       $(".box-styled").remove();
       $(".box-styled-player-2").remove();
 
       $("#top-left").removeClass("box-styled-win");
       $("#top-mid").removeClass("box-styled-win");
       $("#top-right").removeClass("box-styled-win");
+
+      $("#center-left").removeClass("box-styled-win");
+      $("#center-mid").removeClass("box-styled-win");
+      $("#center-right").removeClass("box-styled-win");
+
+      $("#bottom-left").removeClass("box-styled-win");
+      $("#bottom-mid").removeClass("box-styled-win");
+      $("#bottom-right").removeClass("box-styled-win");
     });
   }
 
@@ -62,73 +72,66 @@ $(document).ready(function() {
     }
 
     else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
 
     else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
   /* ----- P1 Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
 
     else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
   /* ----- P1 Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
 
     else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
-      $("#info-container").append("<div>"+ "P1 WINS" +"</div>");
 
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
 
-      gameOver = true;
+      playerOneWin();
     }
   /* ----- Draw Conditions ----- */
     else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
