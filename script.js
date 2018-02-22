@@ -17,7 +17,9 @@ $(document).ready(function() {
     $("#single-player").remove();
     $("#multi-player").remove();
     $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
-    $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
+    $("#game-overlay").append("<div class='symbol-choice'>" +
+    "<span id='symbol-X'>X</span> or " +
+    "<span id='symbol-O'>O</span></div>");
     playerOneScore = 0;
     playerTwoScore = 0;
   }
@@ -29,8 +31,10 @@ $(document).ready(function() {
     $("#game-overlay").toggleClass("hidden");
     $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
     $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
-    $("#info-container").append("<div id='player-1-score' class='active-player'>" + playerOneScore + "</div>");
-    $("#info-container").append("<div id='player-2-score'>" + playerTwoScore + "</div>");
+    $("#info-container").append("<div id='player-1-score' class='active-player'>" +
+    playerOneScore + "</div>");
+    $("#info-container").append("<div id='player-2-score'>" +
+    playerTwoScore + "</div>");
   }
 
 
@@ -160,7 +164,9 @@ $(document).ready(function() {
 
   function checkWin() {
   /* ----- X Symbol Horizontal Win Conditions ----- */
-    if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
+    if($("#top-left").children().html() === "X" &&
+    $("#top-mid").children().html() === "X" &&
+    $("#top-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
@@ -172,7 +178,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
+    else if($("#center-left").children().html() === "X" &&
+    $("#center-mid").children().html() === "X" &&
+    $("#center-right").children().html() === "X") {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
@@ -184,7 +192,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#bottom-left").children().html() === "X" && $("#bottom-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    else if($("#bottom-left").children().html() === "X" &&
+    $("#bottom-mid").children().html() === "X" &&
+    $("#bottom-right").children().html() === "X") {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -196,7 +206,9 @@ $(document).ready(function() {
       }
     }
   /* ----- X Symbol Vertical Win Conditions ----- */
-    else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
+    else if($("#top-left").children().html() === "X" &&
+    $("#center-left").children().html() === "X" &&
+    $("#bottom-left").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
@@ -208,7 +220,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-mid").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-mid").children().html() === "X") {
+    else if($("#top-mid").children().html() === "X" &&
+    $("#center-mid").children().html() === "X" &&
+    $("#bottom-mid").children().html() === "X") {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
@@ -220,7 +234,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-right").children().html() === "X" && $("#center-right").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    else if($("#top-right").children().html() === "X" &&
+    $("#center-right").children().html() === "X" &&
+    $("#bottom-right").children().html() === "X") {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -232,7 +248,9 @@ $(document).ready(function() {
       }
     }
   /* ----- X Symbol Diagonal Win Conditions ----- */
-    else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
+    else if($("#top-left").children().html() === "X" &&
+    $("#center-mid").children().html() === "X" &&
+    $("#bottom-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -244,7 +262,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-right").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-left").children().html() === "X") {
+    else if($("#top-right").children().html() === "X" &&
+    $("#center-mid").children().html() === "X" &&
+    $("#bottom-left").children().html() === "X") {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
@@ -257,7 +277,9 @@ $(document).ready(function() {
     }
 
   /* ----- O Symbol Horizontal Win Conditions ----- */
-    else if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
+    else if($("#top-left").children().html() === "O" &&
+    $("#top-mid").children().html() === "O" &&
+    $("#top-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
@@ -269,7 +291,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#center-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#center-right").children().html() === "O") {
+    else if($("#center-left").children().html() === "O" &&
+    $("#center-mid").children().html() === "O" &&
+    $("#center-right").children().html() === "O") {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
@@ -281,7 +305,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#bottom-left").children().html() === "O" && $("#bottom-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
+    else if($("#bottom-left").children().html() === "O" &&
+    $("#bottom-mid").children().html() === "O" &&
+    $("#bottom-right").children().html() === "O") {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -293,7 +319,9 @@ $(document).ready(function() {
       }
     }
   /* ----- O Symbol Vertical Win Conditions ----- */
-    else if($("#top-left").children().html() === "O" && $("#center-left").children().html() === "O" && $("#bottom-left").children().html() === "O") {
+    else if($("#top-left").children().html() === "O" &&
+    $("#center-left").children().html() === "O" &&
+    $("#bottom-left").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
@@ -305,7 +333,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-mid").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-mid").children().html() === "O") {
+    else if($("#top-mid").children().html() === "O" &&
+    $("#center-mid").children().html() === "O" &&
+    $("#bottom-mid").children().html() === "O") {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
@@ -317,7 +347,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-right").children().html() === "O" && $("#center-right").children().html() === "O" && $("#bottom-right").children().html() === "O") {
+    else if($("#top-right").children().html() === "O" &&
+    $("#center-right").children().html() === "O" &&
+    $("#bottom-right").children().html() === "O") {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -329,7 +361,9 @@ $(document).ready(function() {
       }
     }
   /* ----- O Symbol Diagonal Win Conditions ----- */
-    else if($("#top-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
+    else if($("#top-left").children().html() === "O" &&
+    $("#center-mid").children().html() === "O" &&
+    $("#bottom-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
@@ -341,7 +375,9 @@ $(document).ready(function() {
       }
     }
 
-    else if($("#top-right").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-left").children().html() === "O") {
+    else if($("#top-right").children().html() === "O" &&
+    $("#center-mid").children().html() === "O" &&
+    $("#bottom-left").children().html() === "O") {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
