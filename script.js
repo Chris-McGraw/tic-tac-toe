@@ -28,7 +28,7 @@ $(document).ready(function() {
   }
 
 
-  function advanceScreenRematch() {
+  function advanceScreenToRematch() {
     gameOver = false;
     playerTurn = 1;
     $(".player-win-title").remove();
@@ -53,6 +53,43 @@ $(document).ready(function() {
   }
 
 
+  function returnScreenToGameStart() {
+    gameOver = false;
+    playerTurn = 1;
+    $(".player-win-title").remove();
+    $("#play-again").remove();
+    $("#quit").remove();
+
+    $("#player-1-title").remove();
+    $("#player-1-score").remove();
+    $("#player-2-title").remove();
+    $("#player-2-score").remove();
+
+    $(".box-styled").remove();
+    $(".box-styled-player-2").remove();
+    $("#top-left").removeClass("box-styled-win");
+    $("#top-mid").removeClass("box-styled-win");
+    $("#top-right").removeClass("box-styled-win");
+    $("#center-left").removeClass("box-styled-win");
+    $("#center-mid").removeClass("box-styled-win");
+    $("#center-right").removeClass("box-styled-win");
+    $("#bottom-left").removeClass("box-styled-win");
+    $("#bottom-mid").removeClass("box-styled-win");
+    $("#bottom-right").removeClass("box-styled-win");
+
+    $("#game-overlay").append("<div class='game-title'>Tic -Tac -Toe</div>")
+    $("#game-overlay").append("<div id='single-player' class='game-mode'>1 Player</div>")
+    $("#game-overlay").append("<div id='multi-player' class='game-mode'>2 Player</div>");
+
+    $("#multi-player").on("click", function() {
+      advanceScreenToSymbolChoice();
+      $("#symbol-X").on("click", function() {
+        advanceScreenToGameBoard();
+      });
+    });
+  }
+
+
   function playerOneWin() {
     gameOver = true;
     $("#game-overlay").toggleClass("hidden");
@@ -61,7 +98,11 @@ $(document).ready(function() {
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
     $("#play-again").on("click", function() {
-      advanceScreenRematch();
+      advanceScreenToRematch();
+    });
+
+    $("#quit").on("click", function() {
+      returnScreenToGameStart();
     });
   }
 
@@ -74,7 +115,11 @@ $(document).ready(function() {
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
     $("#play-again").on("click", function() {
-      advanceScreenRematch();
+      advanceScreenToRematch();
+    });
+
+    $("#quit").on("click", function() {
+      returnScreenToGameStart();
     });
   }
 
@@ -87,7 +132,11 @@ $(document).ready(function() {
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
     $("#play-again").on("click", function() {
-      advanceScreenRematch();
+      advanceScreenToRematch();
+    });
+
+    $("#quit").on("click", function() {
+      returnScreenToGameStart();
     });
   }
 
