@@ -402,14 +402,14 @@ $(document).ready(function() {
   }
 
 
-  function checkPlayerDraw() {
+  /* function checkPlayerDraw() {
     if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
     $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
     $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
 
       playerDraw();
     }
-  }
+  } */
 
 
   function playerAction() {
@@ -425,7 +425,8 @@ $(document).ready(function() {
 
       checkWinSymbolX();
       checkWinSymbolO();
-      checkPlayerDraw();
+
+      /* checkPlayerDraw(); */
 
       playerTurn = 2;
     }
@@ -441,7 +442,8 @@ $(document).ready(function() {
 
       checkWinSymbolX();
       checkWinSymbolO();
-      checkPlayerDraw();
+
+      /* checkPlayerDraw(); */
 
       playerTurn = 1;
     }
