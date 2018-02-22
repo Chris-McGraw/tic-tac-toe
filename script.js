@@ -113,10 +113,7 @@ $(document).ready(function() {
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
 
-    /* $("#game-overlay").toggleClass("hidden"); */
-    $("#game-overlay").removeClass("hidden");
-
-
+    $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
@@ -171,7 +168,7 @@ $(document).ready(function() {
 
 
   function checkWinSymbolX() {
-  /* ----- P1 Horizontal Win Conditions ----- */
+  /* ----- X Symbol Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
@@ -213,7 +210,7 @@ $(document).ready(function() {
         playerTwoWin();
       }
     }
-  /* ----- P1 Vertical Win Conditions ----- */
+  /* ----- X Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-left").children().html() === "X" && $("#bottom-left").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
@@ -255,7 +252,7 @@ $(document).ready(function() {
         playerTwoWin();
       }
     }
-  /* ----- P1 Diagonal Win Conditions ----- */
+  /* ----- X Symbol Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#bottom-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
@@ -287,7 +284,7 @@ $(document).ready(function() {
 
 
   function checkWinSymbolO() {
-  /* ----- P2 Horizontal Win Conditions ----- */
+  /* ----- O Symbol Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
@@ -329,7 +326,7 @@ $(document).ready(function() {
         playerTwoWin();
       }
     }
-  /* ----- P2 Vertical Win Conditions ----- */
+  /* ----- O Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-left").children().html() === "O" && $("#bottom-left").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
@@ -371,7 +368,7 @@ $(document).ready(function() {
         playerTwoWin();
       }
     }
-  /* ----- P2 Diagonal Win Conditions ----- */
+  /* ----- O Symbol Diagonal Win Conditions ----- */
     else if($("#top-left").children().html() === "O" && $("#center-mid").children().html() === "O" && $("#bottom-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
