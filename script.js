@@ -3,10 +3,8 @@ $(document).ready(function() {
 /* ------------------------- Variable Declarations ------------------------- */
 
   currentBox = "";
-
   playerOneSymbol = "";
   playerTwoSymbol = "";
-
   playerTurn = 1;
   gameOver = false;
   playerOneScore = 0;
@@ -91,13 +89,11 @@ $(document).ready(function() {
 
     $("#multi-player").on("click", function() {
       advanceScreenToSymbolChoice();
-
       $("#symbol-X").on("click", function() {
         playerOneSymbol = "X";
         playerTwoSymbol = "O";
         advanceScreenToGameBoard();
       });
-
       $("#symbol-O").on("click", function() {
         playerOneSymbol = "O";
         playerTwoSymbol = "X";
@@ -109,7 +105,6 @@ $(document).ready(function() {
 
   function playerOneWin() {
     gameOver = true;
-
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
 
@@ -121,7 +116,6 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
@@ -130,7 +124,6 @@ $(document).ready(function() {
 
   function playerTwoWin() {
     gameOver = true;
-
     playerTwoScore++;
     $("#player-2-score").html(playerTwoScore);
 
@@ -142,7 +135,6 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
@@ -160,24 +152,21 @@ $(document).ready(function() {
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
-
     $("#quit").on("click", function() {
       returnScreenToGameStart();
     });
   }
 
 
-  function checkWinSymbolX() {
+  function checkWin() {
   /* ----- X Symbol Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -187,11 +176,9 @@ $(document).ready(function() {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -201,11 +188,9 @@ $(document).ready(function() {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -215,11 +200,9 @@ $(document).ready(function() {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -229,11 +212,9 @@ $(document).ready(function() {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -243,11 +224,9 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -257,11 +236,9 @@ $(document).ready(function() {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
@@ -271,29 +248,22 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
       if(playerOneSymbol === "X") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
     }
-  }
 
-
-  function checkWinSymbolO() {
   /* ----- O Symbol Horizontal Win Conditions ----- */
-    if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
+    else if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
       $("#top-mid").addClass("box-styled-win");
       $("#top-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -303,11 +273,9 @@ $(document).ready(function() {
       $("#center-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -317,11 +285,9 @@ $(document).ready(function() {
       $("#bottom-left").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -331,11 +297,9 @@ $(document).ready(function() {
       $("#top-left").addClass("box-styled-win");
       $("#center-left").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -345,11 +309,9 @@ $(document).ready(function() {
       $("#top-mid").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-mid").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -359,11 +321,9 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
       $("#center-right").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -373,11 +333,9 @@ $(document).ready(function() {
       $("#top-left").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-right").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
@@ -387,61 +345,44 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
       $("#center-mid").addClass("box-styled-win");
       $("#bottom-left").addClass("box-styled-win");
-
       if(playerOneSymbol === "O") {
         playerOneWin();
       }
-
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
     }
-  }
 
-
-  /* function checkPlayerDraw() {
-    if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
+  /* ----- Player Draw Conditions ----- */
+    else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" &&
+    $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
     $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
-    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
-
+    $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" &&
+    $("#bottom-right").html() !== "") {
       playerDraw();
     }
-  } */
+  }
 
 
   function playerAction() {
     if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
-
       if(playerOneSymbol === "X") {
         $(currentBox).append("<div class='box-styled'>X</div>");
       }
-
       else if(playerOneSymbol === "O") {
         $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
       }
-
-      checkWinSymbolX();
-      checkWinSymbolO();
-
-      /* checkPlayerDraw(); */
-
+      checkWin();
       playerTurn = 2;
     }
     else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
-
       if(playerTwoSymbol === "X") {
         $(currentBox).append("<div class='box-styled'>X</div>");
       }
-
       else if(playerTwoSymbol === "O") {
         $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
       }
-
-      checkWinSymbolX();
-      checkWinSymbolO();
-
-      /* checkPlayerDraw(); */
-
+      checkWin();
       playerTurn = 1;
     }
   }
@@ -466,13 +407,11 @@ $(document).ready(function() {
 
   $("#multi-player").on("click", function() {
     advanceScreenToSymbolChoice();
-
     $("#symbol-X").on("click", function() {
       playerOneSymbol = "X";
       playerTwoSymbol = "O";
       advanceScreenToGameBoard();
     });
-
     $("#symbol-O").on("click", function() {
       playerOneSymbol = "O";
       playerTwoSymbol = "X";
@@ -500,7 +439,6 @@ $(document).ready(function() {
     checkTurn();
   });
 
-
   $("#center-left").on("click", function() {
     currentBox = $("#center-left");
     playerAction();
@@ -518,7 +456,6 @@ $(document).ready(function() {
     playerAction();
     checkTurn();
   });
-
 
   $("#bottom-left").on("click", function() {
     currentBox = $("#bottom-left");
