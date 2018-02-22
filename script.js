@@ -8,6 +8,26 @@ $(document).ready(function() {
 
 /* ------------------------- Function Declarations ------------------------- */
 
+  function advanceScreenToSymbolChoice() {
+    $(".game-title").remove();
+    $("#single-player").remove();
+    $("#multi-player").remove();
+    $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
+    $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
+  }
+
+
+  function advanceScreenToGameBoard() {
+    $(".symbol-choice-title").remove();
+    $(".symbol-choice").remove();
+    $("#game-overlay").toggleClass("hidden");
+    $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
+    $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
+    $("#info-container").append("<div id='player-1-score' class='active-player'>0</div>");
+    $("#info-container").append("<div id='player-2-score'>0</div>");
+  }
+
+
   function checkWinPlayerOne() {
   /* ----- P1 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
@@ -18,6 +38,12 @@ $(document).ready(function() {
       $("#top-right").addClass("box-styled-win");
 
       gameOver = true;
+
+      $("#game-overlay").toggleClass("hidden");
+
+      $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
+      $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
+      $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
     }
 
     else if($("#center-left").children().html() === "X" && $("#center-mid").children().html() === "X" && $("#center-right").children().html() === "X") {
@@ -93,9 +119,12 @@ $(document).ready(function() {
     else if($("#top-left").html() !== "" && $("#top-mid").html() !== "" && $("#top-right").html() !== "" && $("#center-left").html() !== "" &&
     $("#center-mid").html() !== "" && $("#center-right").html() !== "" &&
     $("#bottom-left").html() !== "" && $("#bottom-mid").html() !== "" && $("#bottom-right").html() !== "") {
-      $("#info-container").append("<div>"+ "DRAW" +"</div>");
 
       gameOver = true;
+
+      $("#game-overlay").toggleClass("hidden");
+
+      $("#game-overlay").append("<div class=''>DRAW</div>");
     }
   }
 
@@ -188,6 +217,8 @@ $(document).ready(function() {
       $("#info-container").append("<div>"+ "DRAW" +"</div>");
 
       gameOver = true;
+
+      $("#game-overlay").toggleClass("hidden");
     }
   }
 
@@ -224,18 +255,9 @@ $(document).ready(function() {
 /* ------------------------ Overlay Event Handlers ------------------------ */
 
   $("#multi-player").on("click", function() {
-    $(".game-title").remove();
-    $("#single-player").remove();
-    $("#multi-player").remove();
-    $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
-    $("#game-overlay").append("<div class='symbol-choice'>" + "<span id='symbol-X'>X</span> or " + "<span id='symbol-O'>O</span></div>");
-
+    advanceScreenToSymbolChoice();
     $("#symbol-X").on("click", function() {
-      $("#game-overlay").toggleClass("hidden");
-      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
-      $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
-      $("#info-container").append("<div id='player-1-score' class='active-player'>0</div>");
-      $("#info-container").append("<div id='player-2-score'>0</div>");
+      advanceScreenToGameBoard();
     });
   });
 
