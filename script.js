@@ -113,7 +113,10 @@ $(document).ready(function() {
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
 
-    $("#game-overlay").toggleClass("hidden");
+    /* $("#game-overlay").toggleClass("hidden"); */
+    $("#game-overlay").removeClass("hidden");
+
+
     $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
@@ -167,7 +170,7 @@ $(document).ready(function() {
   }
 
 
-  function checkWinPlayerOne() {
+  function checkWinSymbolX() {
   /* ----- P1 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "X" && $("#top-mid").children().html() === "X" && $("#top-right").children().html() === "X") {
       $("#top-left").addClass("box-styled-win");
@@ -283,7 +286,7 @@ $(document).ready(function() {
   }
 
 
-  function checkWinPlayerTwo() {
+  function checkWinSymbolO() {
   /* ----- P2 Horizontal Win Conditions ----- */
     if($("#top-left").children().html() === "O" && $("#top-mid").children().html() === "O" && $("#top-right").children().html() === "O") {
       $("#top-left").addClass("box-styled-win");
@@ -420,8 +423,8 @@ $(document).ready(function() {
         $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
       }
 
-      checkWinPlayerOne();
-      checkWinPlayerTwo();
+      checkWinSymbolX();
+      checkWinSymbolO();
       checkPlayerDraw();
 
       playerTurn = 2;
@@ -436,8 +439,8 @@ $(document).ready(function() {
         $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
       }
 
-      checkWinPlayerOne();
-      checkWinPlayerTwo();
+      checkWinSymbolX();
+      checkWinSymbolO();
       checkPlayerDraw();
 
       playerTurn = 1;
