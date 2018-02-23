@@ -31,22 +31,27 @@ $(document).ready(function() {
     $("#game-overlay").toggleClass("hidden");
 
     if(playerOneSymbol === "X") {
-      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
       "<span id='player-title-symbol-X'>X</span></div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
       "<span id='player-title-symbol-O'>O</span></div>");
     }
     else if(playerOneSymbol === "O") {
-      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
       "<span id='player-title-symbol-O'>O</span></div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
       "<span id='player-title-symbol-X'>X</span></div>");
     }
 
-    $("#info-container").append("<div id='player-1-score' class='active-player'>" +
+    $("#info-container").append("<div id='player-1-score'>" +
     playerOneScore + "</div>");
     $("#info-container").append("<div id='player-2-score'>" +
     playerTwoScore + "</div>");
+
+    setTimeout(function() {
+      checkTurn();
+    }, 200);
+
   }
 
 
@@ -57,10 +62,11 @@ $(document).ready(function() {
     $("#play-again").remove();
     $("#quit").remove();
     $("#game-overlay").toggleClass("hidden");
-    $("#player-2-title").removeClass("active-player");
-    $("#player-2-score").removeClass("active-player");
-    $("#player-1-title").addClass("active-player");
-    $("#player-1-score").addClass("active-player");
+
+    setTimeout(function() {
+      checkTurn();
+    }, 200);
+
     $(".box-styled").remove();
     $(".box-styled-player-2").remove();
     $("#top-left").removeClass("box-styled-win");
