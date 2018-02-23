@@ -80,7 +80,7 @@ body {
   color: white;
 }
 
-span {
+.symbol-accent {
   position: relative;
   top: 12px;
   font-size: 60px;
@@ -179,7 +179,7 @@ span {
   margin-top: 80px;
   font-size: 18px;
   font-family: sans-serif;
-  color: white;
+  color: darkGray;
   background-color: black;
 }
 
@@ -203,8 +203,20 @@ span {
   text-align: center;
 }
 
+.symbol-X-color {
+  color: black;
+  transition: color 0.2s ease-in-out;
+}
+
+.symbol-O-color {
+  color: red;
+  transition: color 0.2s ease-in-out;
+}
+
 .active-player {
+  color: white;
   background-color: darkGray;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 /* ------------------------------ Game Board ------------------------------ */

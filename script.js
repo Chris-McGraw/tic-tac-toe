@@ -12,14 +12,26 @@ $(document).ready(function() {
 
 /* ------------------------- Function Declarations ------------------------- */
 
+  function randomPlayerTurn() {
+    randomNum = Math.floor((Math.random() * 2));
+
+    if(randomNum === 0) {
+      playerTurn = 1;
+    }
+    else if(randomNum === 1) {
+      playerTurn = 2;
+    }
+  }
+
+
   function advanceScreenToSymbolChoice() {
     $(".game-title").remove();
     $("#single-player").remove();
     $("#multi-player").remove();
     $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
     $("#game-overlay").append("<div class='symbol-choice'>" +
-    "<span id='symbol-X'>X</span> or " +
-    "<span id='symbol-O'>O</span></div>");
+    "<span id='symbol-X' class='symbol-accent'>X</span> or " +
+    "<span id='symbol-O' class='symbol-accent'>O</span></div>");
     playerOneScore = 0;
     playerTwoScore = 0;
   }
@@ -29,12 +41,28 @@ $(document).ready(function() {
     $(".symbol-choice-title").remove();
     $(".symbol-choice").remove();
     $("#game-overlay").toggleClass("hidden");
-    $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
-    $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
-    $("#info-container").append("<div id='player-1-score' class='active-player'>" +
+
+    if(playerOneSymbol === "X") {
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
+      "<span id='player-title-symbol-X'>X</span> :</div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2 - " +
+      "<span id='player-title-symbol-O'>O</span> :</div>");
+    }
+    else if(playerOneSymbol === "O") {
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
+      "<span id='player-title-symbol-O'>O</span> :</div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2 - " +
+      "<span id='player-title-symbol-X'>X</span> :</div>");
+    }
+    $("#info-container").append("<div id='player-1-score'>" +
     playerOneScore + "</div>");
     $("#info-container").append("<div id='player-2-score'>" +
     playerTwoScore + "</div>");
+
+    randomPlayerTurn();
+    setTimeout(function() {
+      checkTurn();
+    }, 200);
   }
 
 
@@ -45,10 +73,12 @@ $(document).ready(function() {
     $("#play-again").remove();
     $("#quit").remove();
     $("#game-overlay").toggleClass("hidden");
-    $("#player-2-title").removeClass("active-player");
-    $("#player-2-score").removeClass("active-player");
-    $("#player-1-title").addClass("active-player");
-    $("#player-1-score").addClass("active-player");
+
+    randomPlayerTurn();
+    setTimeout(function() {
+      checkTurn();
+    }, 200);
+
     $(".box-styled").remove();
     $(".box-styled-player-2").remove();
     $("#top-left").removeClass("box-styled-win");
@@ -428,14 +458,32 @@ $(document).ready(function() {
     if(gameOver === false && playerTurn === 1) {
       $("#player-2-title").removeClass("active-player");
       $("#player-2-score").removeClass("active-player");
+      $("#player-title-symbol-X").removeClass("symbol-X-color");
+      $("#player-title-symbol-O").removeClass("symbol-O-color");
+
       $("#player-1-title").addClass("active-player");
       $("#player-1-score").addClass("active-player");
+      if(playerOneSymbol === "X") {
+        $("#player-title-symbol-X").addClass("symbol-X-color");
+      }
+      else if(playerOneSymbol === "O") {
+        $("#player-title-symbol-O").addClass("symbol-O-color");
+      }
     }
     else if(gameOver === false && playerTurn === 2) {
       $("#player-1-title").removeClass("active-player");
       $("#player-1-score").removeClass("active-player");
+      $("#player-title-symbol-X").removeClass("symbol-X-color");
+      $("#player-title-symbol-O").removeClass("symbol-O-color");
+
       $("#player-2-title").addClass("active-player");
       $("#player-2-score").addClass("active-player");
+      if(playerTwoSymbol === "X") {
+        $("#player-title-symbol-X").addClass("symbol-X-color");
+      }
+      else if(playerTwoSymbol === "O") {
+        $("#player-title-symbol-O").addClass("symbol-O-color");
+      }
     }
   }
 
