@@ -32,15 +32,15 @@ $(document).ready(function() {
 
     if(playerOneSymbol === "X") {
       $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
-      "<span class='symbol-X-color'>X</span></div>");
+      "<span id='player-title-symbol-X'>X</span></div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
-      "<span class='symbol-O-color'>O</span></div>");
+      "<span id='player-title-symbol-O'>O</span></div>");
     }
     else if(playerOneSymbol === "O") {
       $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
-      "<span class='symbol-O-color'>O</span></div>");
+      "<span id='player-title-symbol-O'>O</span></div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
-      "<span class='symbol-X-color'>X</span></div>");
+      "<span id='player-title-symbol-X'>X</span></div>");
     }
 
     $("#info-container").append("<div id='player-1-score' class='active-player'>" +
@@ -440,14 +440,32 @@ $(document).ready(function() {
     if(gameOver === false && playerTurn === 1) {
       $("#player-2-title").removeClass("active-player");
       $("#player-2-score").removeClass("active-player");
+      $("#player-title-symbol-X").removeClass("symbol-X-color");
+      $("#player-title-symbol-O").removeClass("symbol-O-color");
+
       $("#player-1-title").addClass("active-player");
       $("#player-1-score").addClass("active-player");
+      if(playerOneSymbol === "X") {
+        $("#player-title-symbol-X").addClass("symbol-X-color");
+      }
+      else if(playerOneSymbol === "O") {
+        $("#player-title-symbol-O").addClass("symbol-O-color");
+      }
     }
     else if(gameOver === false && playerTurn === 2) {
       $("#player-1-title").removeClass("active-player");
       $("#player-1-score").removeClass("active-player");
+      $("#player-title-symbol-X").removeClass("symbol-X-color");
+      $("#player-title-symbol-O").removeClass("symbol-O-color");
+
       $("#player-2-title").addClass("active-player");
       $("#player-2-score").addClass("active-player");
+      if(playerTwoSymbol === "X") {
+        $("#player-title-symbol-X").addClass("symbol-X-color");
+      }
+      else if(playerTwoSymbol === "O") {
+        $("#player-title-symbol-O").addClass("symbol-O-color");
+      }
     }
   }
 

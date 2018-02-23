@@ -205,16 +205,18 @@ body {
 
 .symbol-X-color {
   color: black;
+  transition: color 0.2s ease-in-out;
 }
 
 .symbol-O-color {
   color: red;
+  transition: color 0.2s ease-in-out;
 }
 
 .active-player {
   color: white;
   background-color: darkGray;
-  transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 /* ------------------------------ Game Board ------------------------------ */
