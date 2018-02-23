@@ -32,15 +32,15 @@ $(document).ready(function() {
 
     if(playerOneSymbol === "X") {
       $("#info-container").append("<div id='player-1-title'>Player 1 - " +
-      "<span id='player-title-symbol-X'>X</span></div>");
+      "<span id='player-title-symbol-X'>X</span> :</div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
-      "<span id='player-title-symbol-O'>O</span></div>");
+      "<span id='player-title-symbol-O'>O</span> :</div>");
     }
     else if(playerOneSymbol === "O") {
       $("#info-container").append("<div id='player-1-title'>Player 1 - " +
-      "<span id='player-title-symbol-O'>O</span></div>");
+      "<span id='player-title-symbol-O'>O</span> :</div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
-      "<span id='player-title-symbol-X'>X</span></div>");
+      "<span id='player-title-symbol-X'>X</span> :</div>");
     }
 
     $("#info-container").append("<div id='player-1-score'>" +
