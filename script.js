@@ -12,6 +12,18 @@ $(document).ready(function() {
 
 /* ------------------------- Function Declarations ------------------------- */
 
+  function randomPlayerTurn() {
+    randomNum = Math.floor((Math.random() * 2));
+
+    if(randomNum === 0) {
+      playerTurn = 1;
+    }
+    else if(randomNum === 1) {
+      playerTurn = 2;
+    }
+  }
+
+
   function advanceScreenToSymbolChoice() {
     $(".game-title").remove();
     $("#single-player").remove();
@@ -42,16 +54,15 @@ $(document).ready(function() {
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
       "<span id='player-title-symbol-X'>X</span> :</div>");
     }
-
     $("#info-container").append("<div id='player-1-score'>" +
     playerOneScore + "</div>");
     $("#info-container").append("<div id='player-2-score'>" +
     playerTwoScore + "</div>");
 
+    randomPlayerTurn();
     setTimeout(function() {
       checkTurn();
     }, 200);
-
   }
 
 
@@ -63,6 +74,7 @@ $(document).ready(function() {
     $("#quit").remove();
     $("#game-overlay").toggleClass("hidden");
 
+    randomPlayerTurn();
     setTimeout(function() {
       checkTurn();
     }, 200);
