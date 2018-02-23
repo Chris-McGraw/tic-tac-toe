@@ -20,10 +20,13 @@ body {
   margin: auto;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
+  transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 .hidden {
   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 /* --------------------------- Game Start Screen --------------------------- */
@@ -127,7 +130,7 @@ body {
     0.75px 0.75px 0 darkGray;
 }
 
-/* -------------------------- Player 1 Win Screen -------------------------- */
+/* --------------------------- Player Win Screen --------------------------- */
 
 .player-win-title {
   position: relative;
@@ -142,6 +145,7 @@ body {
 .continue-options {
   position: relative;
   top: 96px;
+  width: 200px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
@@ -250,8 +254,6 @@ body {
 }
 
 .box-styled-win {
-  background-color: #ffff99;
-
   background-color: darkGray;
 }
 
