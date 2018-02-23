@@ -18,8 +18,8 @@ $(document).ready(function() {
     $("#multi-player").remove();
     $("#game-overlay").append("<div class='symbol-choice-title'>Player One Choose</div>");
     $("#game-overlay").append("<div class='symbol-choice'>" +
-    "<span id='symbol-X'>X</span> or " +
-    "<span id='symbol-O'>O</span></div>");
+    "<span id='symbol-X' class='symbol-accent'>X</span> or " +
+    "<span id='symbol-O' class='symbol-accent'>O</span></div>");
     playerOneScore = 0;
     playerTwoScore = 0;
   }
@@ -29,8 +29,20 @@ $(document).ready(function() {
     $(".symbol-choice-title").remove();
     $(".symbol-choice").remove();
     $("#game-overlay").toggleClass("hidden");
-    $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1:</div>");
-    $("#info-container").append("<div id='player-2-title'>Player 2:</div>");
+
+    if(playerOneSymbol === "X") {
+      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
+      "<span class='symbol-X-color'>X</span></div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2 - " +
+      "<span class='symbol-O-color'>O</span></div>");
+    }
+    else if(playerOneSymbol === "O") {
+      $("#info-container").append("<div id='player-1-title' class='active-player'>Player 1 - " +
+      "<span class='symbol-O-color'>O</span></div>");
+      $("#info-container").append("<div id='player-2-title'>Player 2 - " +
+      "<span class='symbol-X-color'>X</span></div>");
+    }
+
     $("#info-container").append("<div id='player-1-score' class='active-player'>" +
     playerOneScore + "</div>");
     $("#info-container").append("<div id='player-2-score'>" +

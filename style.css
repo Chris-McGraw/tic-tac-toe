@@ -80,7 +80,7 @@ body {
   color: white;
 }
 
-span {
+.symbol-accent {
   position: relative;
   top: 12px;
   font-size: 60px;
@@ -201,6 +201,14 @@ span {
 
 #player-2-score {
   text-align: center;
+}
+
+.symbol-X-color {
+  color: black;
+}
+
+.symbol-O-color {
+  color: red;
 }
 
 .active-player {
