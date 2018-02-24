@@ -5,21 +5,34 @@ $(document).ready(function() {
   currentBox = "";
   playerOneSymbol = "";
   playerTwoSymbol = "";
-  playerTurn = 1;
+  cpuSymbol = "";
+  gameMode = "";
+  playerTurn = 0;
   gameOver = false;
   playerOneScore = 0;
   playerTwoScore = 0;
+  cpuScore = 0;
 
 /* ------------------------- Function Declarations ------------------------- */
 
   function randomPlayerTurn() {
     randomNum = Math.floor((Math.random() * 2));
 
-    if(randomNum === 0) {
-      playerTurn = 1;
+    if(gameMode === "singlePlayer") {
+      if(randomNum === 0) {
+        playerTurn = 1;
+      }
+      else if(randomNum === 1) {
+        playerTurn = "CPU";
+      }
     }
-    else if(randomNum === 1) {
-      playerTurn = 2;
+    else if(gameMode === "multiPlayer") {
+      if(randomNum === 0) {
+        playerTurn = 1;
+      }
+      else if(randomNum === 1) {
+        playerTurn = 2;
+      }
     }
   }
 
@@ -34,6 +47,10 @@ $(document).ready(function() {
     "<span id='symbol-O' class='symbol-accent'>O</span></div>");
     playerOneScore = 0;
     playerTwoScore = 0;
+    cpuScore = 0;
+    playerOneSymbol = "";
+    playerTwoSymbol = "";
+    cpuSymbol = "";
   }
 
 
@@ -42,13 +59,25 @@ $(document).ready(function() {
     $(".symbol-choice").remove();
     $("#game-overlay").toggleClass("hidden");
 
-    if(playerOneSymbol === "X") {
+    if(cpuSymbol === "X") {
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
+      "<span id='player-title-symbol-O'>O</span> :</div>");
+      $("#info-container").append("<div id='player-2-title'>CPU - " +
+      "<span id='player-title-symbol-X'>X</span> :</div>");
+    }
+    else if(cpuSymbol === "O") {
+      $("#info-container").append("<div id='player-1-title'>Player 1 - " +
+      "<span id='player-title-symbol-X'>X</span> :</div>");
+      $("#info-container").append("<div id='player-2-title'>CPU - " +
+      "<span id='player-title-symbol-O'>O</span> :</div>");
+    }
+    else if(playerOneSymbol === "X") {
       $("#info-container").append("<div id='player-1-title'>Player 1 - " +
       "<span id='player-title-symbol-X'>X</span> :</div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
       "<span id='player-title-symbol-O'>O</span> :</div>");
     }
-    else if(playerOneSymbol === "O") {
+    else if(playerTwoSymbol === "X") {
       $("#info-container").append("<div id='player-1-title'>Player 1 - " +
       "<span id='player-title-symbol-O'>O</span> :</div>");
       $("#info-container").append("<div id='player-2-title'>Player 2 - " +
@@ -68,7 +97,6 @@ $(document).ready(function() {
 
   function advanceScreenToRematch() {
     gameOver = false;
-    playerTurn = 1;
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
@@ -95,7 +123,6 @@ $(document).ready(function() {
 
   function returnScreenToGameStart() {
     gameOver = false;
-    playerTurn = 1;
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
@@ -121,7 +148,22 @@ $(document).ready(function() {
     $("#game-overlay").append("<div id='single-player' class='game-mode'>1 Player</div>")
     $("#game-overlay").append("<div id='multi-player' class='game-mode'>2 Player</div>");
 
+    $("#single-player").on("click", function() {
+      gameMode = "singlePlayer";
+      advanceScreenToSymbolChoice();
+      $("#symbol-X").on("click", function() {
+        playerOneSymbol = "X";
+        cpuSymbol = "O";
+        advanceScreenToGameBoard();
+      });
+      $("#symbol-O").on("click", function() {
+        playerOneSymbol = "O";
+        cpuSymbol = "X";
+        advanceScreenToGameBoard();
+      });
+    });
     $("#multi-player").on("click", function() {
+      gameMode = "multiPlayer";
       advanceScreenToSymbolChoice();
       $("#symbol-X").on("click", function() {
         playerOneSymbol = "X";
@@ -175,6 +217,25 @@ $(document).ready(function() {
   }
 
 
+  function cpuWin() {
+    gameOver = true;
+    cpuScore++;
+    $("#player-2-score").html(cpuScore);
+
+    $("#game-overlay").toggleClass("hidden");
+    $("#game-overlay").append("<div class='player-win-title'>CPU Wins</div>");
+    $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
+    $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
+
+    $("#play-again").on("click", function() {
+      advanceScreenToRematch();
+    });
+    $("#quit").on("click", function() {
+      returnScreenToGameStart();
+    });
+  }
+
+
   function playerDraw() {
     gameOver = true;
 
@@ -206,6 +267,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "X") {
+        cpuWin();
+      }
     }
 
     else if($("#center-left").children().html() === "X" &&
@@ -219,6 +283,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "X") {
+        cpuWin();
       }
     }
 
@@ -234,6 +301,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "X") {
+        cpuWin();
+      }
     }
   /* ----- X Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "X" &&
@@ -247,6 +317,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "X") {
+        cpuWin();
       }
     }
 
@@ -262,6 +335,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "X") {
+        cpuWin();
+      }
     }
 
     else if($("#top-right").children().html() === "X" &&
@@ -275,6 +351,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "X") {
+        cpuWin();
       }
     }
   /* ----- X Symbol Diagonal Win Conditions ----- */
@@ -290,6 +369,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "X") {
+        cpuWin();
+      }
     }
 
     else if($("#top-right").children().html() === "X" &&
@@ -303,6 +385,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "X") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "X") {
+        cpuWin();
       }
     }
 
@@ -319,6 +404,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "O") {
+        cpuWin();
+      }
     }
 
     else if($("#center-left").children().html() === "O" &&
@@ -332,6 +420,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "O") {
+        cpuWin();
       }
     }
 
@@ -347,6 +438,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "O") {
+        cpuWin();
+      }
     }
   /* ----- O Symbol Vertical Win Conditions ----- */
     else if($("#top-left").children().html() === "O" &&
@@ -360,6 +454,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "O") {
+        cpuWin();
       }
     }
 
@@ -375,6 +472,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "O") {
+        cpuWin();
+      }
     }
 
     else if($("#top-right").children().html() === "O" &&
@@ -388,6 +488,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "O") {
+        cpuWin();
       }
     }
   /* ----- O Symbol Diagonal Win Conditions ----- */
@@ -403,6 +506,9 @@ $(document).ready(function() {
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
       }
+      else if(cpuSymbol === "O") {
+        cpuWin();
+      }
     }
 
     else if($("#top-right").children().html() === "O" &&
@@ -416,6 +522,9 @@ $(document).ready(function() {
       }
       else if(playerTwoSymbol === "O") {
         playerTwoWin();
+      }
+      else if(cpuSymbol === "O") {
+        cpuWin();
       }
     }
 
@@ -431,25 +540,49 @@ $(document).ready(function() {
 
 
   function playerAction() {
-    if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
-      if(playerOneSymbol === "X") {
-        $(currentBox).append("<div class='box-styled'>X</div>");
+    if(gameMode === "singlePlayer") {
+      if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
+        if(playerOneSymbol === "X") {
+          $(currentBox).append("<div class='box-styled'>X</div>");
+        }
+        else if(playerOneSymbol === "O") {
+          $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+        checkWin();
+        playerTurn = "CPU";
       }
-      else if(playerOneSymbol === "O") {
-        $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+      else if(gameOver === false && $(currentBox).html() === "" && playerTurn === "CPU") {
+        if(cpuSymbol === "X") {
+          $(currentBox).append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+        checkWin();
+        playerTurn = 1;
       }
-      checkWin();
-      playerTurn = 2;
     }
-    else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
-      if(playerTwoSymbol === "X") {
-        $(currentBox).append("<div class='box-styled'>X</div>");
+    else if(gameMode === "multiPlayer") {
+      if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
+        if(playerOneSymbol === "X") {
+          $(currentBox).append("<div class='box-styled'>X</div>");
+        }
+        else if(playerOneSymbol === "O") {
+          $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+        checkWin();
+        playerTurn = 2;
       }
-      else if(playerTwoSymbol === "O") {
-        $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+      else if(gameOver === false && $(currentBox).html() === "" && playerTurn === 2) {
+        if(playerTwoSymbol === "X") {
+          $(currentBox).append("<div class='box-styled'>X</div>");
+        }
+        else if(playerTwoSymbol === "O") {
+          $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+        checkWin();
+        playerTurn = 1;
       }
-      checkWin();
-      playerTurn = 1;
     }
   }
 
@@ -485,11 +618,41 @@ $(document).ready(function() {
         $("#player-title-symbol-O").addClass("symbol-O-color");
       }
     }
+    else if(gameOver === false && playerTurn === "CPU") {
+      $("#player-1-title").removeClass("active-player");
+      $("#player-1-score").removeClass("active-player");
+      $("#player-title-symbol-X").removeClass("symbol-X-color");
+      $("#player-title-symbol-O").removeClass("symbol-O-color");
+
+      $("#player-2-title").addClass("active-player");
+      $("#player-2-score").addClass("active-player");
+      if(cpuSymbol === "X") {
+        $("#player-title-symbol-X").addClass("symbol-X-color");
+      }
+      else if(cpuSymbol === "O") {
+        $("#player-title-symbol-O").addClass("symbol-O-color");
+      }
+    }
   }
 
 /* ------------------------ Overlay Event Handlers ------------------------ */
 
+  $("#single-player").on("click", function() {
+    gameMode = "singlePlayer";
+    advanceScreenToSymbolChoice();
+    $("#symbol-X").on("click", function() {
+      playerOneSymbol = "X";
+      cpuSymbol = "O";
+      advanceScreenToGameBoard();
+    });
+    $("#symbol-O").on("click", function() {
+      playerOneSymbol = "O";
+      cpuSymbol = "X";
+      advanceScreenToGameBoard();
+    });
+  });
   $("#multi-player").on("click", function() {
+    gameMode = "multiPlayer";
     advanceScreenToSymbolChoice();
     $("#symbol-X").on("click", function() {
       playerOneSymbol = "X";
