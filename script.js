@@ -19,7 +19,7 @@ $(document).ready(function() {
 /* ------------------------- Function Declarations ------------------------- */
 
   function randomPlayerTurn() {
-    randomNum = Math.floor((Math.random() * 2));
+    var randomNum = Math.floor((Math.random() * 2));
 
     if(gameMode === "singlePlayer") {
       if(randomNum === 0) {
@@ -54,6 +54,8 @@ $(document).ready(function() {
     playerOneSymbol = "";
     playerTwoSymbol = "";
     cpuSymbol = "";
+
+    turnCount = 1;
   }
 
 
@@ -100,6 +102,9 @@ $(document).ready(function() {
 
   function advanceScreenToRematch() {
     gameOver = false;
+
+    turnCount = 1;
+
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
@@ -549,6 +554,58 @@ $(document).ready(function() {
   }
 
 
+  function randomMove4() {
+    var randomNum = Math.floor((Math.random() * 4));
+
+    console.log(randomNum);
+
+    if(randomNum === 0) {
+      if($("#top-mid").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#top-mid").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
+
+    else if(randomNum === 1) {
+      if($("#center-right").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#center-right").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
+
+    else if(randomNum === 2) {
+      if($("#bottom-mid").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#bottom-mid").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
+
+    else if(randomNum === 3) {
+      if($("#center-left").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#center-left").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
+
+  }
+
+
   function cpuGameLogic() {
     if(gameOver === false && playerTurn === "CPU") {
   /* ----- Corner Defense ----- */
@@ -565,16 +622,76 @@ $(document).ready(function() {
           }
         }
       }
-  /* ----- Turn 4 Test (edit/remove later) ----- */    
+  /* ----- Turn 4 Test (edit/remove later) ----- */
       if(turnCount === 4) {
-        if($("#top-mid").html() === "") {
-          if(cpuSymbol === "X") {
-            $("#top-mid").append("<div class='box-styled'>X</div>");
-          }
-          else if(cpuSymbol === "O") {
-            $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+        if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol ||
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#top-left").children().html() === playerOneSymbol) {
+          randomMove4();
+        }
+      }
+
+  /* ----- Turn 6 Test (edit/remove later) ----- */
+      if(turnCount === 6) {
+        if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#bottom-mid").children().html() === playerOneSymbol) {
+          if($("#bottom-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
           }
         }
+
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol) {
+          if($("#bottom-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+      }
+
+  /* ----- Turn 8 Test (edit/remove later) ----- */
+      if(turnCount === 8) {
+        if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#bottom-mid").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol ) {
+          if($("#center-right").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#center-right").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+        if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol ) {
+          if($("#top-mid").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#top-mid").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
       checkWin();
