@@ -8,6 +8,9 @@ $(document).ready(function() {
   cpuSymbol = "";
   gameMode = "";
   playerTurn = 0;
+
+  turnCount = 1;
+
   gameOver = false;
   playerOneScore = 0;
   playerTwoScore = 0;
@@ -546,6 +549,42 @@ $(document).ready(function() {
   }
 
 
+  function cpuGameLogic() {
+    if(gameOver === false && playerTurn === "CPU") {
+  /* ----- Corner Defense ----- */
+      if($("#top-left").children().html() === playerOneSymbol||
+      $("#top-right").children().html() === playerOneSymbol ||
+      $("#bottom-left").children().html() === playerOneSymbol ||
+      $("#bottom-right").children().html() === playerOneSymbol) {
+        if($("#center-mid").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#center-mid").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#center-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+  /* ----- Turn 4 Test (edit/remove later) ----- */    
+      if(turnCount === 4) {
+        if($("#top-mid").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#top-mid").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      checkWin();
+      playerTurn = 1;
+      turnCount++;
+      checkTurn();
+    }
+  }
+
+
   function playerAction() {
     if(gameMode === "singlePlayer") {
       if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
@@ -555,20 +594,17 @@ $(document).ready(function() {
         else if(playerOneSymbol === "O") {
           $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
         }
+
         checkWin();
         playerTurn = "CPU";
-      }
-      else if(gameOver === false && $(currentBox).html() === "" && playerTurn === "CPU") {
-        if(cpuSymbol === "X") {
-          $(currentBox).append("<div class='box-styled'>X</div>");
-        }
-        else if(cpuSymbol === "O") {
-          $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
-        }
-        checkWin();
-        playerTurn = 1;
+        turnCount++;
+
+        setTimeout(function() {
+          cpuGameLogic();
+        }, 800);
       }
     }
+
     else if(gameMode === "multiPlayer") {
       if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
         if(playerOneSymbol === "X") {
