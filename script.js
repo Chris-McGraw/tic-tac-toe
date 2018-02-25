@@ -185,7 +185,14 @@ $(document).ready(function() {
     $("#player-1-score").html(playerOneScore);
 
     $("#game-overlay").toggleClass("hidden");
-    $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
+
+    if(gameMode === "singlePlayer") {
+      $("#game-overlay").append("<div class='player-win-title'>You Win</div>");
+    }
+    else if(gameMode === "multiPlayer") {
+      $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
+    }
+
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
@@ -223,7 +230,7 @@ $(document).ready(function() {
     $("#player-2-score").html(cpuScore);
 
     $("#game-overlay").toggleClass("hidden");
-    $("#game-overlay").append("<div class='player-win-title'>CPU Wins</div>");
+    $("#game-overlay").append("<div class='player-win-title'>You Lose</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
 
