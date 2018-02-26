@@ -660,6 +660,19 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#top-mid").children().html() === playerOneSymbol) {
+          if($("#top-right").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#top-right").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
   /* ----- Turn 8 Test (edit/remove later) ----- */
@@ -678,7 +691,7 @@ $(document).ready(function() {
           }
         }
 
-        if($("#top-left").children().html() === playerOneSymbol &&
+        else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol ) {
@@ -688,6 +701,20 @@ $(document).ready(function() {
             }
             else if(cpuSymbol === "O") {
               $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol &&
+        $("#top-mid").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol) {
+          if($("#center-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#center-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
         }
