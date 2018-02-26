@@ -602,7 +602,35 @@ $(document).ready(function() {
         }
       }
     }
+  }
 
+
+  function randomMove2() {
+    var randomNum = Math.floor((Math.random() * 2));
+
+    console.log(randomNum);
+
+    if(randomNum === 0) {
+      if($("#bottom-mid").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#bottom-mid").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
+
+    else if(randomNum === 1) {
+      if($("#bottom-right").html() === "") {
+        if(cpuSymbol === "X") {
+          $("#bottom-right").append("<div class='box-styled'>X</div>");
+        }
+        else if(cpuSymbol === "O") {
+          $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+        }
+      }
+    }
   }
 
 
@@ -702,6 +730,19 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#top-mid").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol) {
+          if($("#center-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#center-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
   /* -------------------- Turn 8 -------------------- */
@@ -763,6 +804,12 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#top-mid").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#center-right").children().html() === playerOneSymbol) {
+          randomMove2();
+        }
       }
 
       checkWin();
