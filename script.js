@@ -763,6 +763,18 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol) {
+          if($("#bottom-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
 
@@ -1019,6 +1031,19 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol) {
+          if($("#top-mid").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#top-mid").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
   /* -------------------- Turn 8 -------------------- */
@@ -1130,6 +1155,30 @@ $(document).ready(function() {
               $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
+          else if($("#center-right").html() === "" &&
+          $("#bottom-right").html() === "") {
+            var randomNum = Math.floor((Math.random() * 2));
+            if(randomNum === 0) {
+              if($("#center-right").html() === "") {
+                if(cpuSymbol === "X") {
+                  $("#center-right").append("<div class='box-styled'>X</div>");
+                }
+                else if(cpuSymbol === "O") {
+                  $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+                }
+              }
+            }
+            else if(randomNum === 1) {
+              if($("#bottom-right").html() === "") {
+                if(cpuSymbol === "X") {
+                  $("#bottom-right").append("<div class='box-styled'>X</div>");
+                }
+                else if(cpuSymbol === "O") {
+                  $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+                }
+              }
+            }
+          }
         }
 
         else if($("#top-left").children().html() === playerOneSymbol &&
@@ -1186,7 +1235,6 @@ $(document).ready(function() {
                 }
               }
             }
-
             else if(randomNum === 1) {
               if($("#bottom-left").html() === "") {
                 if(cpuSymbol === "X") {
@@ -1198,7 +1246,6 @@ $(document).ready(function() {
               }
             }
           }
-
           else if($("#top-left").html() === "") {
             if(cpuSymbol === "X") {
               $("#top-left").append("<div class='box-styled'>X</div>");
@@ -1237,7 +1284,6 @@ $(document).ready(function() {
               }
             }
           }
-
           if($("#bottom-left").html() === "") {
             if(cpuSymbol === "X") {
               $("#bottom-left").append("<div class='box-styled'>X</div>");
@@ -1276,7 +1322,6 @@ $(document).ready(function() {
               }
             }
           }
-
           else if($("#top-right").html() === "") {
             if(cpuSymbol === "X") {
               $("#top-right").append("<div class='box-styled'>X</div>");
