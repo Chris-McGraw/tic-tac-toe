@@ -827,6 +827,19 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol) {
+          if($("#top-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#top-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#top-mid").children().html() === playerOneSymbol) {
@@ -1438,6 +1451,20 @@ $(document).ready(function() {
             }
             else if(cpuSymbol === "O") {
               $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol) {
+          if($("#bottom-mid").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-mid").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
         }
