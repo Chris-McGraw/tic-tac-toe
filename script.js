@@ -631,6 +631,13 @@ $(document).ready(function() {
           randomMove4();
         }
 
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol ||
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol) {
+          randomMove4();
+        }
+
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#top-mid").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "") {
@@ -790,6 +797,19 @@ $(document).ready(function() {
             }
             else if(cpuSymbol === "O") {
               $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#bottom-mid").children().html() === playerOneSymbol) {
+          if($("#bottom-right").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-right").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
         }
@@ -1059,6 +1079,20 @@ $(document).ready(function() {
             }
             else if(cpuSymbol === "O") {
               $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol &&
+        $("#bottom-mid").children().html() === playerOneSymbol &&
+        $("#top-left").children().html() === playerOneSymbol) {
+          if($("#center-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#center-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
         }
