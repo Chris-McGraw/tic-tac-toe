@@ -786,6 +786,56 @@ $(document).ready(function() {
 
   /* -------------------- Turn 6 -------------------- */
       if(turnCount === 6) {
+
+      /* ----- CPU Win Logic ----- */
+      if($("#top-left").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#bottom-right").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#bottom-right").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      else if($("#top-right").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#bottom-left").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#bottom-left").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      else if($("#bottom-right").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#top-left").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#top-left").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      else if($("#bottom-left").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#top-right").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#top-right").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
       /* ----- CPU Force Tie Logic ----- */
         if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol &&
