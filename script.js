@@ -618,6 +618,54 @@ $(document).ready(function() {
             $("#center-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
           }
         }
+
+        else if($("#center-mid").children().html() === playerOneSymbol) {
+          var randomNum = Math.floor((Math.random() * 4));
+          if(randomNum === 0) {
+            if($("#top-left").html() === "") {
+              if(cpuSymbol === "X") {
+                $("#top-left").append("<div class='box-styled'>X</div>");
+              }
+              else if(cpuSymbol === "O") {
+                $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+              }
+            }
+          }
+
+          else if(randomNum === 1) {
+            if($("#top-right").html() === "") {
+              if(cpuSymbol === "X") {
+                $("#top-right").append("<div class='box-styled'>X</div>");
+              }
+              else if(cpuSymbol === "O") {
+                $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+              }
+            }
+          }
+
+          else if(randomNum === 2) {
+            if($("#bottom-right").html() === "") {
+              if(cpuSymbol === "X") {
+                $("#bottom-right").append("<div class='box-styled'>X</div>");
+              }
+              else if(cpuSymbol === "O") {
+                $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+              }
+            }
+          }
+
+          else if(randomNum === 3) {
+            if($("#bottom-left").html() === "") {
+              if(cpuSymbol === "X") {
+                $("#bottom-left").append("<div class='box-styled'>X</div>");
+              }
+              else if(cpuSymbol === "O") {
+                $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+              }
+            }
+          }
+        }
+
       }
 
   /* -------------------- Turn 4 -------------------- */
