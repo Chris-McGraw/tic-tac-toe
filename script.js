@@ -607,11 +607,9 @@ $(document).ready(function() {
 
       console.log(turnCount);
 
-  /* ----- Corner Defense ----- */
-      if($("#top-left").children().html() === playerOneSymbol||
-      $("#top-right").children().html() === playerOneSymbol ||
-      $("#bottom-left").children().html() === playerOneSymbol ||
-      $("#bottom-right").children().html() === playerOneSymbol) {
+  /* -------------------- Turn 2 -------------------- */
+      if(turnCount === 2) {
+      /* ----- CPU Force Tie Logic ----- */
         if($("#center-mid").html() === "") {
           if(cpuSymbol === "X") {
             $("#center-mid").append("<div class='box-styled'>X</div>");
@@ -621,6 +619,7 @@ $(document).ready(function() {
           }
         }
       }
+
   /* -------------------- Turn 4 -------------------- */
       if(turnCount === 4) {
       /* ----- CPU Force Tie Logic ----- */
