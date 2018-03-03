@@ -829,6 +829,18 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#center-right").children().html() === playerOneSymbol) {
+          if($("#top-right").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#top-right").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
 
@@ -1164,24 +1176,37 @@ $(document).ready(function() {
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#top-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
-          var randomNum = Math.floor((Math.random() * 2));
-          if(randomNum === 0) {
-            if($("#top-mid").html() === "") {
-              if(cpuSymbol === "X") {
-                $("#top-mid").append("<div class='box-styled'>X</div>");
-              }
-              else if(cpuSymbol === "O") {
-                $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
-              }
+
+          if($("#center-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#center-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
-          else if(randomNum === 1) {
-            if($("#bottom-mid").html() === "") {
-              if(cpuSymbol === "X") {
-                $("#bottom-mid").append("<div class='box-styled'>X</div>");
+
+          else if($("#top-mid").html() === "" &&
+          $("#bottom-mid").html() === "") {
+            var randomNum = Math.floor((Math.random() * 2));
+            if(randomNum === 0) {
+              if($("#top-mid").html() === "") {
+                if(cpuSymbol === "X") {
+                  $("#top-mid").append("<div class='box-styled'>X</div>");
+                }
+                else if(cpuSymbol === "O") {
+                  $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+                }
               }
-              else if(cpuSymbol === "O") {
-                $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+            else if(randomNum === 1) {
+              if($("#bottom-mid").html() === "") {
+                if(cpuSymbol === "X") {
+                  $("#bottom-mid").append("<div class='box-styled'>X</div>");
+                }
+                else if(cpuSymbol === "O") {
+                  $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+                }
               }
             }
           }
