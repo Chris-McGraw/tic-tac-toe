@@ -917,6 +917,18 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#bottom-left").children().html() === playerOneSymbol &&
+        $("#center-right").children().html() === playerOneSymbol) {
+          if($("#bottom-right").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-right").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
 
