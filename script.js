@@ -891,6 +891,18 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#bottom-right").children().html() === playerOneSymbol &&
+        $("#center-left").children().html() === playerOneSymbol) {
+          if($("#bottom-left").html() === "") {
+            if(cpuSymbol === "X") {
+              $("#bottom-left").append("<div class='box-styled'>X</div>");
+            }
+            else if(cpuSymbol === "O") {
+              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+            }
+          }
+        }
+
       }
 
 
@@ -1536,7 +1548,8 @@ $(document).ready(function() {
         $("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
-          if($("#bottom-mid").html() === "") {
+          if($("#bottom-mid").html() === "" &&
+          $("#bottom-left").html() === "") {
             var randomNum = Math.floor((Math.random() * 2));
             if(randomNum === 0) {
               if($("#bottom-mid").html() === "") {
