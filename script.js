@@ -975,6 +975,18 @@ $(document).ready(function() {
         }
       }
 
+      else if($("#top-mid").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#bottom-mid").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#bottom-mid").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
       else if($("#top-right").children().html() === cpuSymbol &&
       $("#center-mid").children().html() === cpuSymbol) {
         if($("#bottom-left").html() === "") {
@@ -983,6 +995,18 @@ $(document).ready(function() {
           }
           else if(cpuSymbol === "O") {
             $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      else if($("#center-right").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#center-left").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#center-left").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
           }
         }
       }
@@ -999,6 +1023,18 @@ $(document).ready(function() {
         }
       }
 
+      else if($("#bottom-mid").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#top-mid").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#top-mid").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
       else if($("#bottom-left").children().html() === cpuSymbol &&
       $("#center-mid").children().html() === cpuSymbol) {
         if($("#top-right").html() === "") {
@@ -1007,6 +1043,18 @@ $(document).ready(function() {
           }
           else if(cpuSymbol === "O") {
             $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+          }
+        }
+      }
+
+      else if($("#center-left").children().html() === cpuSymbol &&
+      $("#center-mid").children().html() === cpuSymbol) {
+        if($("#center-right").html() === "") {
+          if(cpuSymbol === "X") {
+            $("#center-right").append("<div class='box-styled'>X</div>");
+          }
+          else if(cpuSymbol === "O") {
+            $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
           }
         }
       }
