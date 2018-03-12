@@ -660,6 +660,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-left").children().html() === cpuSymbol &&
@@ -671,6 +673,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-left").children().html() === cpuSymbol &&
@@ -682,6 +686,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-left").children().html() === cpuSymbol &&
@@ -693,6 +699,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-mid").children().html() === cpuSymbol &&
@@ -704,6 +712,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-right").children().html() === cpuSymbol &&
@@ -715,6 +725,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-right").children().html() === cpuSymbol &&
@@ -726,6 +738,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-right").children().html() === cpuSymbol &&
@@ -737,6 +751,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#top-right").children().html() === cpuSymbol &&
@@ -748,6 +764,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#center-right").children().html() === cpuSymbol &&
@@ -759,6 +777,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-right").children().html() === cpuSymbol &&
@@ -770,6 +790,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-right").children().html() === cpuSymbol &&
@@ -781,6 +803,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-right").children().html() === cpuSymbol &&
@@ -792,6 +816,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-right").children().html() === cpuSymbol &&
@@ -803,6 +829,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-mid").children().html() === cpuSymbol &&
@@ -814,6 +842,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-left").children().html() === cpuSymbol &&
@@ -825,6 +855,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-left").children().html() === cpuSymbol &&
@@ -836,6 +868,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-left").children().html() === cpuSymbol &&
@@ -847,6 +881,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#bottom-left").children().html() === cpuSymbol &&
@@ -858,6 +894,8 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
     }
 
     else if($("#center-left").children().html() === cpuSymbol &&
@@ -869,6 +907,12 @@ $(document).ready(function() {
       else if(cpuSymbol === "O") {
         $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
+
+      return true;
+    }
+
+    else {
+      return false
     }
   }
 
@@ -1871,7 +1915,7 @@ $(document).ready(function() {
   /* -------------------- Turn 8 -------------------- */
       if(turnCount === 8) {
       /* ----- CPU Win Logic ----- */
-        if(cpuOffense() === true) {
+        if(cpuOffense()) {
           cpuOffense();
         }
 
