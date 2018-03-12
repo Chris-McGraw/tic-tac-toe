@@ -875,6 +875,39 @@ $(document).ready(function() {
 
   function cpuDefense() {
     if($("#top-left").children().html() === playerOneSymbol &&
+    $("#top-mid").children().html() === playerOneSymbol &&
+    $("#top-right").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#top-right").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-left").children().html() === playerOneSymbol &&
+    $("#top-right").children().html() === playerOneSymbol &&
+    $("#top-mid").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#top-mid").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-left").children().html() === playerOneSymbol &&
+    $("#center-left").children().html() === playerOneSymbol &&
+    $("#bottom-left").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#bottom-left").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-left").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#bottom-right").html() === "") {
       if(cpuSymbol === "X") {
@@ -893,6 +926,39 @@ $(document).ready(function() {
       }
       else if(cpuSymbol === "O") {
         $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-right").children().html() === playerOneSymbol &&
+    $("#top-mid").children().html() === playerOneSymbol &&
+    $("#top-left").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#top-left").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-right").children().html() === playerOneSymbol &&
+    $("#center-right").children().html() === playerOneSymbol &&
+    $("#bottom-right").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#bottom-right").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#top-right").children().html() === playerOneSymbol &&
+    $("#bottom-right").children().html() === playerOneSymbol &&
+    $("#center-right").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#center-right").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#center-right").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
     }
 
@@ -919,6 +985,39 @@ $(document).ready(function() {
     }
 
     else if($("#bottom-right").children().html() === playerOneSymbol &&
+    $("#center-right").children().html() === playerOneSymbol &&
+    $("#top-right").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#top-right").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-right").children().html() === playerOneSymbol &&
+    $("#bottom-mid").children().html() === playerOneSymbol &&
+    $("#bottom-left").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#bottom-left").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-right").children().html() === playerOneSymbol &&
+    $("#bottom-left").children().html() === playerOneSymbol &&
+    $("#bottom-mid").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#bottom-mid").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-right").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#top-left").html() === "") {
       if(cpuSymbol === "X") {
@@ -937,6 +1036,39 @@ $(document).ready(function() {
       }
       else if(cpuSymbol === "O") {
         $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-left").children().html() === playerOneSymbol &&
+    $("#bottom-mid").children().html() === playerOneSymbol &&
+    $("#bottom-right").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#bottom-right").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-left").children().html() === playerOneSymbol &&
+    $("#center-left").children().html() === playerOneSymbol &&
+    $("#top-left").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#top-left").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
+      }
+    }
+
+    else if($("#bottom-left").children().html() === playerOneSymbol &&
+    $("#top-left").children().html() === playerOneSymbol &&
+    $("#center-left").html() === "") {
+      if(cpuSymbol === "X") {
+        $("#center-left").append("<div class='box-styled'>X</div>");
+      }
+      else if(cpuSymbol === "O") {
+        $("#center-left").append("<div class='box-styled box-styled-player-2'>O</div>");
       }
     }
 
@@ -990,9 +1122,13 @@ $(document).ready(function() {
   /* -------------------- Turn 4 -------------------- */
       if(turnCount === 4) {
       /* ----- CPU Center Tile Defense ----- */
-        if($("#center-mid").children().html() === playerOneSymbol) {
+        if(cpuDefense() === true) {
           cpuDefense();
         }
+
+       /* if($("#center-mid").children().html() === playerOneSymbol) {
+          cpuDefense();
+        } */
 
       /* ----- CPU Force Tie Logic ----- */
         else if($("#top-left").children().html() === playerOneSymbol &&
@@ -1009,7 +1145,7 @@ $(document).ready(function() {
           randomMove4();
         }
 
-        else if($("#top-left").children().html() === playerOneSymbol &&
+        /* else if($("#top-left").children().html() === playerOneSymbol &&
         $("#top-mid").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "") {
             if(cpuSymbol === "X") {
@@ -1031,7 +1167,7 @@ $(document).ready(function() {
               $("#top-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
             }
           }
-        }
+        } */
 
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol) {
