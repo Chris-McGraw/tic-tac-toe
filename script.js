@@ -1237,7 +1237,7 @@ $(document).ready(function() {
   /* -------------------- Turn 8 -------------------- */
       if(turnCount === 8) {
       /* ----- CPU Offense----- */
-        if(cpuOffense() === true) {
+        if(gameOver === false) {
           cpuOffense();
         }
 
