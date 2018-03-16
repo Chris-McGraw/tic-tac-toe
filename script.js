@@ -871,20 +871,12 @@ $(document).ready(function() {
 
   /* -------------------- Turn 2 -------------------- */
       if(turnCount === 2) {
-      /* ----- CPU Force Tie Logic ----- */
         if($("#center-mid").html() === "") {
-          if(cpuSymbol === "X") {
-            $("#center-mid").append("<div class='box-styled'>X</div>");
-          }
-          else if(cpuSymbol === "O") {
-            $("#center-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
-          }
+          markCpuBox($("#center-mid"));
         }
-
         else if($("#center-mid").children().html() === playerOneSymbol) {
           randomMove4Corners();
         }
-
       }
 
   /* -------------------- Turn 4 -------------------- */
@@ -911,24 +903,14 @@ $(document).ready(function() {
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#top-right").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#top-right"));
           }
         }
 
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-left").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-left"));
           }
         }
 
@@ -937,48 +919,28 @@ $(document).ready(function() {
         $("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol ) {
           if($("#top-right").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#top-right").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#top-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#top-right"));
           }
         }
 
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-right").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-right"));
           }
         }
 
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#top-left").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#top-left").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#top-left"));
           }
         }
 
         else if($("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-left").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-left"));
           }
         }
 
@@ -987,24 +949,14 @@ $(document).ready(function() {
         $("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol ) {
           if($("#top-left").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#top-left").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#top-left").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#top-left"));
           }
         }
 
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-right").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-right"));
           }
         }
 
@@ -1016,12 +968,7 @@ $(document).ready(function() {
         else if($("#center-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-right").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-right"));
           }
         }
 
@@ -1033,12 +980,7 @@ $(document).ready(function() {
         else if($("#bottom-mid").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
-            if(cpuSymbol === "X") {
-              $("#bottom-left").append("<div class='box-styled'>X</div>");
-            }
-            else if(cpuSymbol === "O") {
-              $("#bottom-left").append("<div class='box-styled box-styled-player-2'>O</div>");
-            }
+            markCpuBox($("#bottom-left"));
           }
         }
 
