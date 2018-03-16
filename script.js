@@ -562,7 +562,6 @@ $(document).ready(function() {
 
   function randomMove4() {
     var randomNum = Math.floor((Math.random() * 4));
-
     if(randomNum === 0) {
       if($("#top-mid").html() === "") {
         markCpuBox($("#top-mid"));
@@ -588,7 +587,6 @@ $(document).ready(function() {
 
   function randomMove4Corners() {
     var randomNum = Math.floor((Math.random() * 4));
-
     if(randomNum === 0) {
       if($("#top-left").html() === "") {
         markCpuBox($("#top-left"));
@@ -617,162 +615,122 @@ $(document).ready(function() {
     $("#top-mid").children().html() === cpuSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === cpuSymbol &&
     $("#top-right").children().html() === cpuSymbol &&
     $("#top-mid").html() === "") {
       markCpuBox($("#top-mid"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === cpuSymbol &&
     $("#center-left").children().html() === cpuSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#top-mid").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#bottom-mid").html() === "") {
       markCpuBox($("#bottom-mid"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === cpuSymbol &&
     $("#top-mid").children().html() === cpuSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === cpuSymbol &&
     $("#center-right").children().html() === cpuSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === cpuSymbol &&
     $("#bottom-right").children().html() === cpuSymbol &&
     $("#center-right").html() === "") {
       markCpuBox($("#center-right"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#center-right").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#center-left").html() === "") {
       markCpuBox($("#center-left"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === cpuSymbol &&
     $("#center-right").children().html() === cpuSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === cpuSymbol &&
     $("#bottom-mid").children().html() === cpuSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === cpuSymbol &&
     $("#bottom-left").children().html() === cpuSymbol &&
     $("#bottom-mid").html() === "") {
       markCpuBox($("#bottom-mid"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#bottom-mid").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#top-mid").html() === "") {
       markCpuBox($("#top-mid"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === cpuSymbol &&
     $("#bottom-mid").children().html() === cpuSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === cpuSymbol &&
     $("#center-left").children().html() === cpuSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === cpuSymbol &&
     $("#top-left").children().html() === cpuSymbol &&
     $("#center-left").html() === "") {
       markCpuBox($("#center-left"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#center-left").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#center-right").html() === "") {
       markCpuBox($("#center-right"));
-
       return true;
     }
-
     else {
       return false;
     }
@@ -784,162 +742,122 @@ $(document).ready(function() {
     $("#top-mid").children().html() === playerOneSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === playerOneSymbol &&
     $("#top-right").children().html() === playerOneSymbol &&
     $("#top-mid").html() === "") {
       markCpuBox($("#top-mid"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === playerOneSymbol &&
     $("#center-left").children().html() === playerOneSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#top-left").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#top-mid").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#bottom-mid").html() === "") {
       markCpuBox($("#bottom-mid"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === playerOneSymbol &&
     $("#top-mid").children().html() === playerOneSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === playerOneSymbol &&
     $("#center-right").children().html() === playerOneSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === playerOneSymbol &&
     $("#bottom-right").children().html() === playerOneSymbol &&
     $("#center-right").html() === "") {
       markCpuBox($("#center-right"));
-
       return true;
     }
-
     else if($("#top-right").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#center-right").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#center-left").html() === "") {
       markCpuBox($("#center-left"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === playerOneSymbol &&
     $("#center-right").children().html() === playerOneSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === playerOneSymbol &&
     $("#bottom-mid").children().html() === playerOneSymbol &&
     $("#bottom-left").html() === "") {
       markCpuBox($("#bottom-left"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === playerOneSymbol &&
     $("#bottom-left").children().html() === playerOneSymbol &&
     $("#bottom-mid").html() === "") {
       markCpuBox($("#bottom-mid"));
-
       return true;
     }
-
     else if($("#bottom-right").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#bottom-mid").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#top-mid").html() === "") {
       markCpuBox($("#top-mid"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === playerOneSymbol &&
     $("#bottom-mid").children().html() === playerOneSymbol &&
     $("#bottom-right").html() === "") {
       markCpuBox($("#bottom-right"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === playerOneSymbol &&
     $("#center-left").children().html() === playerOneSymbol &&
     $("#top-left").html() === "") {
       markCpuBox($("#top-left"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === playerOneSymbol &&
     $("#top-left").children().html() === playerOneSymbol &&
     $("#center-left").html() === "") {
       markCpuBox($("#center-left"));
-
       return true;
     }
-
     else if($("#bottom-left").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#top-right").html() === "") {
       markCpuBox($("#top-right"));
-
       return true;
     }
-
     else if($("#center-left").children().html() === playerOneSymbol &&
     $("#center-mid").children().html() === playerOneSymbol &&
     $("#center-right").html() === "") {
       markCpuBox($("#center-right"));
-
       return true;
     }
-
     else {
       return false;
     }
