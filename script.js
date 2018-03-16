@@ -883,7 +883,6 @@ $(document).ready(function() {
       if(turnCount === 4) {
       /* ----- CPU Defense ----- */
         if(cpuDefense() === true) {
-          cpuDefense();
         }
 
         else if($("#top-left").children().html() === playerOneSymbol &&
@@ -991,12 +990,10 @@ $(document).ready(function() {
       if(turnCount === 6) {
       /* ----- CPU Offense ----- */
         if(cpuOffense() === true) {
-          cpuOffense();
         }
 
       /* ----- CPU Defense ----- */
         else if(cpuDefense() === true) {
-          cpuDefense();
         }
 
       /* ----- CPU Force Tie Logic ----- */
@@ -1237,13 +1234,11 @@ $(document).ready(function() {
   /* -------------------- Turn 8 -------------------- */
       if(turnCount === 8) {
       /* ----- CPU Offense----- */
-        if(gameOver === false) {
-          cpuOffense();
+        if(cpuOffense() === true) {
         }
 
       /* ----- CPU Defense ----- */
         else if(cpuDefense() === true) {
-          cpuDefense();
         }
 
       /* ----- CPU Force Tie Logic ----- */
