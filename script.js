@@ -1171,22 +1171,12 @@ $(document).ready(function() {
             var randomNum = Math.floor((Math.random() * 2));
             if(randomNum === 0) {
               if($("#bottom-mid").html() === "") {
-                if(cpuSymbol === "X") {
-                  $("#bottom-mid").append("<div class='box-styled'>X</div>");
-                }
-                else if(cpuSymbol === "O") {
-                  $("#bottom-mid").append("<div class='box-styled box-styled-player-2'>O</div>");
-                }
+                markCpuBox($("#bottom-mid"));
               }
             }
             else if(randomNum === 1) {
               if($("#bottom-right").html() === "") {
-                if(cpuSymbol === "X") {
-                  $("#bottom-right").append("<div class='box-styled'>X</div>");
-                }
-                else if(cpuSymbol === "O") {
-                  $("#bottom-right").append("<div class='box-styled box-styled-player-2'>O</div>");
-                }
+                markCpuBox($("#bottom-right"));
               }
             }
           }
