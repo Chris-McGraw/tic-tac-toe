@@ -561,7 +561,7 @@ $(document).ready(function() {
 
 
   function markCpuBoxRandom() {
-    emptyBoxes = [];
+    var emptyBoxes = [];
     if($("#top-left").html() === "") {
       emptyBoxes.push($("#top-left"));
     }
@@ -591,53 +591,41 @@ $(document).ready(function() {
   }
 
 
-  function randomMove4() {
-    var randomNum = Math.floor((Math.random() * 4));
-    if(randomNum === 0) {
-      if($("#top-mid").html() === "") {
-        markCpuBox($("#top-mid"));
-      }
+  function markCpuBoxRandomCardinal() {
+    var emptyBoxes = [];
+    if($("#top-mid").html() === "") {
+      emptyBoxes.push($("#top-mid"));
     }
-    else if(randomNum === 1) {
-      if($("#center-right").html() === "") {
-        markCpuBox($("#center-right"));
-      }
+    if($("#center-right").html() === "") {
+      emptyBoxes.push($("#center-right"));
     }
-    else if(randomNum === 2) {
-      if($("#bottom-mid").html() === "") {
-        markCpuBox($("#bottom-mid"));
-      }
+    if($("#bottom-mid").html() === "") {
+      emptyBoxes.push($("#bottom-mid"));
     }
-    else if(randomNum === 3) {
-      if($("#center-left").html() === "") {
-        markCpuBox($("#center-left"));
-      }
+    if($("#center-left").html() === "") {
+      emptyBoxes.push($("#center-left"));
     }
+    var randomNum = Math.floor((Math.random() * emptyBoxes.length));
+    markCpuBox(emptyBoxes[randomNum]);
   }
 
 
-  function randomMove4Corners() {
-    var randomNum = Math.floor((Math.random() * 4));
-    if(randomNum === 0) {
-      if($("#top-left").html() === "") {
-        markCpuBox($("#top-left"));
-      }
+  function markCpuBoxRandomCorner() {
+    var emptyBoxes = [];
+    if($("#top-left").html() === "") {
+      emptyBoxes.push($("#top-left"));
     }
-    else if(randomNum === 1) {
-      if($("#top-right").html() === "") {
-        markCpuBox($("#top-right"));
-      }
+    if($("#top-right").html() === "") {
+      emptyBoxes.push($("#top-right"));
     }
-    else if(randomNum === 2) {
-      if($("#bottom-right").html() === "") {
-        markCpuBox($("#bottom-right"));
-      }
+    if($("#bottom-right").html() === "") {
+      emptyBoxes.push($("#bottom-right"));
     }
-    else if(randomNum === 3) {
-      if($("#bottom-left").html() === "") {
-        markCpuBox($("#bottom-left"));
-      }
+    if($("#bottom-left").html() === "") {
+      emptyBoxes.push($("#bottom-left"));
     }
+    var randomNum = Math.floor((Math.random() * emptyBoxes.length));
+    markCpuBox(emptyBoxes[randomNum]);
   }
 
 
@@ -906,7 +894,7 @@ $(document).ready(function() {
           markCpuBox($("#center-mid"));
         }
         else if($("#center-mid").children().html() === playerOneSymbol) {
-          randomMove4Corners();
+          markCpuBoxRandomCorner();
         }
       }
 
@@ -920,14 +908,14 @@ $(document).ready(function() {
         $("#bottom-right").children().html() === playerOneSymbol ||
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#top-left").children().html() === playerOneSymbol) {
-          randomMove4();
+          markCpuBoxRandomCardinal();
         }
 
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol ||
         $("#bottom-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol) {
-          randomMove4();
+          markCpuBoxRandomCardinal();
         }
 
         else if($("#top-left").children().html() === playerOneSymbol &&
@@ -992,7 +980,7 @@ $(document).ready(function() {
 
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
-          randomMove4Corners();
+          markCpuBoxRandomCorner();
         }
 
         else if($("#center-right").children().html() === playerOneSymbol &&
@@ -1004,7 +992,7 @@ $(document).ready(function() {
 
         else if($("#center-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
-          randomMove4Corners();
+          markCpuBoxRandomCorner();
         }
 
         else if($("#bottom-mid").children().html() === playerOneSymbol &&
@@ -1033,17 +1021,7 @@ $(document).ready(function() {
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#center-left").html() === "" &&
           $("#center-right").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#center-left").html() === "") {
-                markCpuBox($("#center-left"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#center-right").html() === "") {
-                markCpuBox($("#center-right"));
-              }
-            }
+            markCpuBoxRandomCardinal();
           }
         }
 
@@ -1052,17 +1030,7 @@ $(document).ready(function() {
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#top-mid").html() === "" &&
           $("#bottom-mid").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-mid").html() === "") {
-                markCpuBox($("#top-mid"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-mid").html() === "") {
-                markCpuBox($("#bottom-mid"));
-              }
-            }
+            markCpuBoxRandomCardinal();
           }
         }
 
@@ -1071,17 +1039,7 @@ $(document).ready(function() {
         $("#top-mid").children().html() === playerOneSymbol) {
           if($("#center-left").html() === "" &&
           $("#center-right").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#center-left").html() === "") {
-                markCpuBox($("#center-left"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#center-right").html() === "") {
-                markCpuBox($("#center-right"));
-              }
-            }
+            markCpuBoxRandomCardinal();
           }
         }
 
@@ -1090,17 +1048,7 @@ $(document).ready(function() {
         $("#center-right").children().html() === playerOneSymbol) {
           if($("#top-mid").html() === "" &&
           $("#bottom-mid").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-mid").html() === "") {
-                markCpuBox($("#top-mid"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-mid").html() === "") {
-                markCpuBox($("#bottom-mid"));
-              }
-            }
+            markCpuBoxRandomCardinal();
           }
         }
 
@@ -1109,17 +1057,7 @@ $(document).ready(function() {
         $("#bottom-left").children().html() === playerOneSymbol) {
           if($("#top-left").html() === "" &&
           $("#bottom-right").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-left").html() === "") {
-                markCpuBox($("#top-left"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-right").html() === "") {
-                markCpuBox($("#bottom-right"));
-              }
-            }
+            markCpuBoxRandomCorner();
           }
         }
 
@@ -1128,17 +1066,7 @@ $(document).ready(function() {
         $("#bottom-right").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "" &&
           $("#bottom-left").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-right").html() === "") {
-                markCpuBox($("#top-right"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-left").html() === "") {
-                markCpuBox($("#bottom-left"));
-              }
-            }
+            markCpuBoxRandomCorner();
           }
         }
 
@@ -1147,17 +1075,7 @@ $(document).ready(function() {
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "" &&
           $("#bottom-left").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-right").html() === "") {
-                markCpuBox($("#top-right"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-left").html() === "") {
-                markCpuBox($("#bottom-left"));
-              }
-            }
+            markCpuBoxRandomCorner();
           }
         }
 
@@ -1166,17 +1084,7 @@ $(document).ready(function() {
         $("#top-right").children().html() === playerOneSymbol) {
           if($("#top-left").html() === "" &&
           $("#bottom-right").html() === "") {
-            var randomNum = Math.floor((Math.random() * 2));
-            if(randomNum === 0) {
-              if($("#top-left").html() === "") {
-                markCpuBox($("#top-left"));
-              }
-            }
-            else if(randomNum === 1) {
-              if($("#bottom-right").html() === "") {
-                markCpuBox($("#bottom-right"));
-              }
-            }
+            markCpuBoxRandomCorner();
           }
         }
 
