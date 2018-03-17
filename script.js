@@ -1002,6 +1002,26 @@ $(document).ready(function() {
           }
         }
 
+        else if($("#top-left").children().html() === playerOneSymbol &&
+        $("#center-mid").children().html() === playerOneSymbol) {
+          markCpuBoxRandomCorner();
+        }
+
+        else if($("#top-right").children().html() === playerOneSymbol &&
+        $("#center-mid").children().html() === playerOneSymbol) {
+          markCpuBoxRandomCorner();
+        }
+
+        else if($("#bottom-right").children().html() === playerOneSymbol &&
+        $("#center-mid").children().html() === playerOneSymbol) {
+          markCpuBoxRandomCorner();
+        }
+
+        else if($("#bottom-left").children().html() === playerOneSymbol &&
+        $("#center-mid").children().html() === playerOneSymbol) {
+          markCpuBoxRandomCorner();
+        }
+
       }
 
 
