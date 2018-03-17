@@ -560,6 +560,37 @@ $(document).ready(function() {
   }
 
 
+  function markCpuBoxRandom() {
+    emptyBoxes = [];
+    if($("#top-left").html() === "") {
+      emptyBoxes.push($("#top-left"));
+    }
+    if($("#top-mid").html() === "") {
+      emptyBoxes.push($("#top-mid"));
+    }
+    if($("#top-right").html() === "") {
+      emptyBoxes.push($("#top-right"));
+    }
+    if($("#center-right").html() === "") {
+      emptyBoxes.push($("#center-right"));
+    }
+    if($("#bottom-right").html() === "") {
+      emptyBoxes.push($("#bottom-right"));
+    }
+    if($("#bottom-mid").html() === "") {
+      emptyBoxes.push($("#bottom-mid"));
+    }
+    if($("#bottom-left").html() === "") {
+      emptyBoxes.push($("#bottom-left"));
+    }
+    if($("#center-left").html() === "") {
+      emptyBoxes.push($("#center-left"));
+    }
+    var randomNum = Math.floor((Math.random() * emptyBoxes.length));
+    markCpuBox(emptyBoxes[randomNum]);
+  }
+
+
   function randomMove4() {
     var randomNum = Math.floor((Math.random() * 4));
     if(randomNum === 0) {
@@ -1162,7 +1193,12 @@ $(document).ready(function() {
         }
 
       /* ----- CPU Force Tie Logic ----- */
-        else if($("#top-left").children().html() === playerOneSymbol &&
+
+        else {
+          markCpuBoxRandom();
+        }
+
+        /* else if($("#top-left").children().html() === playerOneSymbol &&
         $("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
@@ -1390,7 +1426,7 @@ $(document).ready(function() {
               }
             }
           }
-        }
+        } */
 
       }
 
