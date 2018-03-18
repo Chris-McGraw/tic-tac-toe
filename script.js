@@ -94,6 +94,12 @@ $(document).ready(function() {
     setTimeout(function() {
       checkTurn();
     }, 200);
+
+    if(playerTurn === "CPU") {
+      setTimeout(function() {
+        cpuGameLogic();
+      }, 800);
+    }
   }
 
 
@@ -123,6 +129,12 @@ $(document).ready(function() {
     $("#bottom-left").removeClass("box-styled-win");
     $("#bottom-mid").removeClass("box-styled-win");
     $("#bottom-right").removeClass("box-styled-win");
+
+    if(playerTurn === "CPU") {
+      setTimeout(function() {
+        cpuGameLogic();
+      }, 800);
+    }
   }
 
 
@@ -888,8 +900,13 @@ $(document).ready(function() {
 
       console.log(turnCount);
 
-  /* -------------------- Turn 2 -------------------- */
-      if(turnCount === 2) {
+  /* -------------------- Turn 1 -------------------- */
+      if(turnCount === 1) {
+        markCpuBoxRandomCorner();
+      }
+
+  /* -------------------- Turn 2 or 3 -------------------- */
+      if(turnCount === 2 || turnCount === 3) {
         if($("#center-mid").html() === "") {
           markCpuBox($("#center-mid"));
         }
@@ -1020,6 +1037,18 @@ $(document).ready(function() {
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
+        }
+
+      }
+
+  /* -------------------- Turn 5 -------------------- */
+      if(turnCount === 5) {
+      /* ----- CPU Offense----- */
+        if(cpuOffense() === true) {
+        }
+
+      /* ----- CPU Defense ----- */
+        else if(cpuDefense() === true) {
         }
 
       }
