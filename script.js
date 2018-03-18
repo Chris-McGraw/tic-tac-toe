@@ -666,6 +666,14 @@ $(document).ready(function() {
       markCpuBox($("#bottom-right"));
       return true;
     }
+
+    else if($("#top-left").children().html() === cpuSymbol &&
+    $("#bottom-right").children().html() === cpuSymbol &&
+    $("#center-mid").html() === "") {
+      markCpuBox($("#center-mid"));
+      return true;
+    }
+
     else if($("#top-mid").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#bottom-mid").html() === "") {
@@ -696,6 +704,14 @@ $(document).ready(function() {
       markCpuBox($("#bottom-left"));
       return true;
     }
+
+    else if($("#top-right").children().html() === cpuSymbol &&
+    $("#bottom-left").children().html() === cpuSymbol &&
+    $("#center-mid").html() === "") {
+      markCpuBox($("#center-mid"));
+      return true;
+    }
+
     else if($("#center-right").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#center-left").html() === "") {
@@ -905,14 +921,19 @@ $(document).ready(function() {
         markCpuBoxRandomCorner();
       }
 
-  /* -------------------- Turn 2 or 3 -------------------- */
-      if(turnCount === 2 || turnCount === 3) {
+  /* -------------------- Turn 2  -------------------- */
+      if(turnCount === 2) {
         if($("#center-mid").html() === "") {
           markCpuBox($("#center-mid"));
         }
         else if($("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
+      }
+
+  /* -------------------- Turn 3  -------------------- */
+      if(turnCount === 3) {
+        markCpuBoxRandomCorner();
       }
 
   /* -------------------- Turn 4 -------------------- */
@@ -1051,6 +1072,10 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
+        else {
+          markCpuBoxRandomCorner();
+        }
+
       }
 
 
@@ -1139,6 +1164,22 @@ $(document).ready(function() {
 
       }
 
+  /* -------------------- Turn 7 -------------------- */
+      if(turnCount === 7) {
+      /* ----- CPU Offense----- */
+        if(cpuOffense() === true) {
+        }
+
+      /* ----- CPU Defense ----- */
+        else if(cpuDefense() === true) {
+        }
+
+        else {
+          markCpuBoxRandomCorner();
+        }
+
+      }
+
   /* -------------------- Turn 8 -------------------- */
       if(turnCount === 8) {
       /* ----- CPU Offense----- */
@@ -1150,6 +1191,22 @@ $(document).ready(function() {
         }
 
       /* ----- CPU Force Tie Logic ----- */
+        else {
+          markCpuBoxRandom();
+        }
+
+      }
+
+  /* -------------------- Turn 9 -------------------- */
+      if(turnCount === 9) {
+      /* ----- CPU Offense----- */
+        if(cpuOffense() === true) {
+        }
+
+      /* ----- CPU Defense ----- */
+        else if(cpuDefense() === true) {
+        }
+
         else {
           markCpuBoxRandom();
         }
