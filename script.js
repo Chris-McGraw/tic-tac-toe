@@ -666,14 +666,12 @@ $(document).ready(function() {
       markCpuBox($("#bottom-right"));
       return true;
     }
-
     else if($("#top-left").children().html() === cpuSymbol &&
     $("#bottom-right").children().html() === cpuSymbol &&
     $("#center-mid").html() === "") {
       markCpuBox($("#center-mid"));
       return true;
     }
-
     else if($("#top-mid").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#bottom-mid").html() === "") {
@@ -704,14 +702,12 @@ $(document).ready(function() {
       markCpuBox($("#bottom-left"));
       return true;
     }
-
     else if($("#top-right").children().html() === cpuSymbol &&
     $("#bottom-left").children().html() === cpuSymbol &&
     $("#center-mid").html() === "") {
       markCpuBox($("#center-mid"));
       return true;
     }
-
     else if($("#center-right").children().html() === cpuSymbol &&
     $("#center-mid").children().html() === cpuSymbol &&
     $("#center-left").html() === "") {
@@ -1077,7 +1073,6 @@ $(document).ready(function() {
         }
 
       }
-
 
   /* -------------------- Turn 6 -------------------- */
       if(turnCount === 6) {
