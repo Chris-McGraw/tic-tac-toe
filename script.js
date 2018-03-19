@@ -929,7 +929,15 @@ $(document).ready(function() {
 
   /* -------------------- Turn 3  -------------------- */
       if(turnCount === 3) {
-        markCpuBoxRandomCorner();
+        if($("#top-mid").children().html() === playerOneSymbol ||
+        $("#center-right").children().html() === playerOneSymbol ||
+        $("#bottom-mid").children().html() === playerOneSymbol ||
+        $("#center-left").children().html() === playerOneSymbol) {
+          markCpuBox($("#center-mid"));
+        }
+        else {
+          markCpuBoxRandomCorner();
+        }
       }
 
   /* -------------------- Turn 4 -------------------- */
@@ -938,6 +946,7 @@ $(document).ready(function() {
         if(cpuDefense() === true) {
         }
 
+      /* ----- CPU Additional Logic ----- */
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol ||
         $("#bottom-right").children().html() === playerOneSymbol &&
@@ -1068,6 +1077,7 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
+      /* ----- CPU Additional Logic ----- */
         else {
           markCpuBoxRandomCorner();
         }
@@ -1084,7 +1094,7 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
-      /* ----- CPU Force Tie Logic ----- */
+      /* ----- CPU Additional Logic ----- */
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
@@ -1169,6 +1179,7 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
+      /* ----- CPU Additional Logic ----- */
         else {
           markCpuBoxRandomCorner();
         }
@@ -1185,7 +1196,7 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
-      /* ----- CPU Force Tie Logic ----- */
+      /* ----- CPU Additional Logic ----- */
         else {
           markCpuBoxRandom();
         }
@@ -1202,6 +1213,7 @@ $(document).ready(function() {
         else if(cpuDefense() === true) {
         }
 
+      /* ----- CPU Additional Logic ----- */
         else {
           markCpuBoxRandom();
         }
