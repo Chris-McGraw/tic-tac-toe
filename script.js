@@ -1078,6 +1078,38 @@ $(document).ready(function() {
         }
 
       /* ----- CPU Additional Logic ----- */
+        else if($("#top-mid").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol) {
+          markCpuBox($("#bottom-left"));
+        }
+        else if($("#top-mid").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol) {
+          markCpuBox($("#bottom-right"));
+        }
+        else if($("#center-right").children().html() === playerOneSymbol &&
+        $("#top-left").children().html() === playerOneSymbol) {
+          markCpuBox($("#bottom-left"));
+        }
+        else if($("#center-right").children().html() === playerOneSymbol &&
+        $("#bottom-left").children().html() === playerOneSymbol) {
+          markCpuBox($("#top-left"));
+        }
+        else if($("#bottom-mid").children().html() === playerOneSymbol &&
+        $("#top-left").children().html() === playerOneSymbol) {
+          markCpuBox($("#top-right"));
+        }
+        else if($("#bottom-mid").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol) {
+          markCpuBox($("#top-left"));
+        }
+        else if($("#center-left").children().html() === playerOneSymbol &&
+        $("#top-right").children().html() === playerOneSymbol) {
+          markCpuBox($("#bottom-right"));
+        }
+        else if($("#center-left").children().html() === playerOneSymbol &&
+        $("#bottom-right").children().html() === playerOneSymbol) {
+          markCpuBox($("#top-right"));
+        }
         else {
           markCpuBoxRandomCorner();
         }
