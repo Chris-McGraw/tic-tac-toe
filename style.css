@@ -33,36 +33,45 @@ body {
 
 .game-title {
   position: relative;
-  top: 42px;
+  top: 44px;
+
+  width: 400px;
+  margin: auto;
+
   text-align: center;
+  text-indent: 0.6px;
   font-size: 64px;
 
   font-family: 'Questrial', sans-serif;
-
   color: white;
 }
 
 #title-spacing {
-  letter-spacing: -6px;
+  letter-spacing: -5px;
 }
 
-#title-spacing-2 {
-  letter-spacing: 10px;
+/* #title-spacing-2 {
+  letter-spacing: 15px;
 }
 
 #title-spacing-3 {
-  letter-spacing: 0.25px;
-}
+  letter-spacing: 9px;
+} */
 
 .game-mode {
   position: relative;
+
   top: 76px;
+  top: 90px;
+
   width: 150px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   font-size: 38px;
-  font-family: sans-serif;
+
+  font-family: 'Questrial', sans-serif;
+
   color: white;
   cursor: pointer;
 }
