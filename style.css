@@ -35,9 +35,23 @@ body {
   position: relative;
   top: 42px;
   text-align: center;
-  font-size: 66px;
-  font-family: sans-serif;
+  font-size: 64px;
+
+  font-family: 'Questrial', sans-serif;
+
   color: white;
+}
+
+#title-spacing {
+  letter-spacing: -2px;
+}
+
+#title-spacing-2 {
+  letter-spacing: 8px;
+}
+
+#title-spacing-3 {
+  letter-spacing: -1px;
 }
 
 .game-mode {
