@@ -43,15 +43,15 @@ body {
 }
 
 #title-spacing {
-  letter-spacing: -2px;
+  letter-spacing: -6px;
 }
 
 #title-spacing-2 {
-  letter-spacing: 8px;
+  letter-spacing: 10px;
 }
 
 #title-spacing-3 {
-  letter-spacing: -1px;
+  letter-spacing: 0.25px;
 }
 
 .game-mode {
