@@ -31,17 +31,44 @@ body {
 
 /* --------------------------- Game Start Screen --------------------------- */
 
-.game-title {
+#title-container {
+  width: 400px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.game-title-1 {
+  display: inline-block;
   position: relative;
   top: 44px;
+  width: 110px;
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
 
-  width: 400px;
+.game-title-2 {
+  display: inline-block;
+  position: relative;
+  top: 44px;
+  width: 170px;
   margin: auto;
-
   text-align: center;
   text-indent: 0.6px;
   font-size: 64px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
 
+.game-title-3 {
+  display: inline-block;
+  position: relative;
+  top: 44px;
+  width: 110px;
+  text-align: center;
+  font-size: 64px;
   font-family: 'Questrial', sans-serif;
   color: white;
 }
@@ -50,28 +77,15 @@ body {
   letter-spacing: -5px;
 }
 
-/* #title-spacing-2 {
-  letter-spacing: 15px;
-}
-
-#title-spacing-3 {
-  letter-spacing: 9px;
-} */
-
 .game-mode {
   position: relative;
-
-  top: 76px;
   top: 90px;
-
   width: 150px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   font-size: 38px;
-
   font-family: 'Questrial', sans-serif;
-
   color: white;
   cursor: pointer;
 }
