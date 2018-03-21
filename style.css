@@ -45,7 +45,7 @@ body {
   width: 110px;
   text-align: center;
   font-size: 64px;
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
@@ -58,7 +58,7 @@ body {
   text-align: center;
   text-indent: 0.6px;
   font-size: 64px;
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
@@ -69,7 +69,7 @@ body {
   width: 110px;
   text-align: center;
   font-size: 64px;
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
@@ -85,7 +85,7 @@ body {
   margin-top: 20px;
   text-align: center;
   font-size: 38px;
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
   cursor: pointer;
 }
@@ -102,28 +102,28 @@ body {
 
 .symbol-choice-title {
   position: relative;
-  top: 50px;
+  top: 54px;
   margin: auto;
   text-align: center;
   font-size: 48px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 .symbol-choice {
   position: relative;
-  top: 120px;
+  top: 124px;
   margin: auto;
   text-align: center;
   font-size: 30px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 .symbol-accent {
   position: relative;
   top: 12px;
-  font-size: 60px;
+  font-size: 62px;
   cursor: pointer;
 }
 
