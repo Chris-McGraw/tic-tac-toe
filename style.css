@@ -31,24 +31,67 @@ body {
 
 /* --------------------------- Game Start Screen --------------------------- */
 
-.game-title {
-  position: relative;
-  top: 42px;
+#title-container {
+  width: 420px;
+  height: auto;
+  margin: auto;
   text-align: center;
-  font-size: 66px;
-  font-family: sans-serif;
+  font-size: 0;
+}
+
+.game-title-1 {
+  display: inline-block;
+  position: relative;
+  top: 44px;
+  width: 110px;
+  font-size: 64px;
+  font-family: "Questrial", sans-serif;
   color: white;
+}
+
+.game-title-2 {
+  display: inline-block;
+  position: relative;
+  top: 44px;
+  width: 180px;
+  font-size: 64px;
+  font-family: "Questrial", sans-serif;
+  color: white;
+}
+
+.game-title-3 {
+  display: inline-block;
+  position: relative;
+  top: 44px;
+  width: 110px;
+  font-size: 64px;
+  font-family: "Questrial", sans-serif;
+  color: white;
+}
+
+#title-spacing {
+  letter-spacing: -5px;
+}
+
+#title-spacing-2 {
+  position: relative;
+  left: 2px;
+}
+
+#title-spacing-3 {
+  position: relative;
+  right: 2px;
 }
 
 .game-mode {
   position: relative;
-  top: 76px;
+  top: 90px;
   width: 150px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   font-size: 38px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
   cursor: pointer;
 }
@@ -65,28 +108,28 @@ body {
 
 .symbol-choice-title {
   position: relative;
-  top: 50px;
+  top: 54px;
   margin: auto;
   text-align: center;
   font-size: 48px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 .symbol-choice {
   position: relative;
-  top: 120px;
+  top: 124px;
   margin: auto;
   text-align: center;
   font-size: 30px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 .symbol-accent {
   position: relative;
   top: 12px;
-  font-size: 60px;
+  font-size: 62px;
   cursor: pointer;
 }
 
@@ -134,23 +177,23 @@ body {
 
 .player-win-title {
   position: relative;
-  top: 50px;
+  top: 54px;
   margin: auto;
   text-align: center;
   font-size: 48px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
 }
 
 .continue-options {
   position: relative;
-  top: 96px;
+  top: 104px;
   width: 200px;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   font-size: 38px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: white;
   cursor: pointer;
 }
@@ -182,28 +225,29 @@ body {
   margin: auto;
   margin-top: 80px;
   font-size: 18px;
-  font-family: sans-serif;
+  font-family: "Questrial", sans-serif;
   color: darkGray;
   background-color: black;
 }
 
 #player-1-title {
-  padding-top: 2px;
+  padding-top: 5px;
   text-align: center;
-
 }
 
 #player-1-score {
+  padding-top: 2px;
   text-align: center;
 }
 
 #player-2-title {
-  padding-top: 2px;
+  padding-top: 5px;
   text-align: center;
 
 }
 
 #player-2-score {
+  padding-top: 2px;
   text-align: center;
 }
 
@@ -245,8 +289,8 @@ body {
   margin-top: 40px;
   text-align: center;
   text-transform: uppercase;
-  font-size: 64px;
-  font-family: sans-serif;
+  font-size: 68px;
+  font-family: "Questrial", sans-serif;
 }
 
 .box-styled-player-2 {
