@@ -43,7 +43,6 @@ body {
   position: relative;
   top: 44px;
   width: 110px;
-  text-align: center;
   font-size: 64px;
   font-family: "Questrial", sans-serif;
   color: white;
@@ -54,9 +53,6 @@ body {
   position: relative;
   top: 44px;
   width: 180px;
-  margin: auto;
-  text-align: center;
-  text-indent: 0.6px;
   font-size: 64px;
   font-family: "Questrial", sans-serif;
   color: white;
@@ -67,7 +63,6 @@ body {
   position: relative;
   top: 44px;
   width: 110px;
-  text-align: center;
   font-size: 64px;
   font-family: "Questrial", sans-serif;
   color: white;

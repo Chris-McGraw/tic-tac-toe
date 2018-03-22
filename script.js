@@ -163,9 +163,13 @@ $(document).ready(function() {
 
     $("#game-overlay").append("<div id='title-container'>" +
       "<div class='game-title-1'>Tic</div>" +
-      "<div class='game-title-2'><span id='title-spacing'>- T</span>ac -</div>" +
+      "<div class='game-title-2'>" +
+        "<span id='title-spacing-2'>- </span>" +
+        "<span id='title-spacing'>T</span>ac" +
+        "<span id='title-spacing-3'> -</span>" +
+      "</div>" +
       "<div class='game-title-3'><span id='title-spacing'>T</span>oe</div>" +
-      "</div>");
+    "</div>");
 
     $("#game-overlay").append("<div id='single-player' class='game-mode'>1 Player</div>");
     $("#game-overlay").append("<div id='multi-player' class='game-mode'>2 Player</div>");
