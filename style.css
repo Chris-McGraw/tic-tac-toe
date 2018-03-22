@@ -36,6 +36,7 @@ body {
   height: auto;
   margin: auto;
   text-align: center;
+  font-size: 0;
 }
 
 .game-title-1 {
@@ -285,7 +286,7 @@ body {
 }
 
 .box-styled {
-  margin-top: 42px;
+  margin-top: 40px;
   text-align: center;
   text-transform: uppercase;
   font-size: 68px;
