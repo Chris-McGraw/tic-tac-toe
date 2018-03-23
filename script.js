@@ -51,7 +51,6 @@ $(document).ready(function() {
     playerOneSymbol = "";
     playerTwoSymbol = "";
     cpuSymbol = "";
-
     turnCount = 1;
   }
 
@@ -105,9 +104,7 @@ $(document).ready(function() {
 
   function advanceScreenToRematch() {
     gameOver = false;
-
     turnCount = 1;
-
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
@@ -143,12 +140,10 @@ $(document).ready(function() {
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
-
     $("#player-1-title").remove();
     $("#player-1-score").remove();
     $("#player-2-title").remove();
     $("#player-2-score").remove();
-
     $(".box-styled").remove();
     $(".box-styled-player-2").remove();
     $("#top-left").removeClass("box-styled-win");
@@ -210,17 +205,14 @@ $(document).ready(function() {
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
     $("#game-overlay").toggleClass("hidden");
-
     if(gameMode === "singlePlayer") {
       $("#game-overlay").append("<div class='player-win-title'>You Win</div>");
     }
     else if(gameMode === "multiPlayer") {
       $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
     }
-
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -234,12 +226,10 @@ $(document).ready(function() {
     gameOver = true;
     playerTwoScore++;
     $("#player-2-score").html(playerTwoScore);
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Player Two Wins</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -253,12 +243,10 @@ $(document).ready(function() {
     gameOver = true;
     cpuScore++;
     $("#player-2-score").html(cpuScore);
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>You Lose</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -270,12 +258,10 @@ $(document).ready(function() {
 
   function playerDraw() {
     gameOver = true;
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Draw</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -303,7 +289,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#center-left").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#center-right").children().html() === "X") {
@@ -320,7 +305,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#bottom-left").children().html() === "X" &&
     $("#bottom-mid").children().html() === "X" &&
     $("#bottom-right").children().html() === "X") {
@@ -354,7 +338,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-mid").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#bottom-mid").children().html() === "X") {
@@ -371,7 +354,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "X" &&
     $("#center-right").children().html() === "X" &&
     $("#bottom-right").children().html() === "X") {
@@ -405,7 +387,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#bottom-left").children().html() === "X") {
@@ -440,7 +421,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#center-left").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#center-right").children().html() === "O") {
@@ -457,7 +437,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#bottom-left").children().html() === "O" &&
     $("#bottom-mid").children().html() === "O" &&
     $("#bottom-right").children().html() === "O") {
@@ -491,7 +470,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-mid").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#bottom-mid").children().html() === "O") {
@@ -508,7 +486,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "O" &&
     $("#center-right").children().html() === "O" &&
     $("#bottom-right").children().html() === "O") {
@@ -542,7 +519,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#bottom-left").children().html() === "O") {
