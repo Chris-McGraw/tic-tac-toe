@@ -51,7 +51,6 @@ $(document).ready(function() {
     playerOneSymbol = "";
     playerTwoSymbol = "";
     cpuSymbol = "";
-
     turnCount = 1;
   }
 
@@ -105,9 +104,7 @@ $(document).ready(function() {
 
   function advanceScreenToRematch() {
     gameOver = false;
-
     turnCount = 1;
-
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
@@ -143,12 +140,10 @@ $(document).ready(function() {
     $(".player-win-title").remove();
     $("#play-again").remove();
     $("#quit").remove();
-
     $("#player-1-title").remove();
     $("#player-1-score").remove();
     $("#player-2-title").remove();
     $("#player-2-score").remove();
-
     $(".box-styled").remove();
     $(".box-styled-player-2").remove();
     $("#top-left").removeClass("box-styled-win");
@@ -210,17 +205,14 @@ $(document).ready(function() {
     playerOneScore++;
     $("#player-1-score").html(playerOneScore);
     $("#game-overlay").toggleClass("hidden");
-
     if(gameMode === "singlePlayer") {
       $("#game-overlay").append("<div class='player-win-title'>You Win</div>");
     }
     else if(gameMode === "multiPlayer") {
       $("#game-overlay").append("<div class='player-win-title'>Player One Wins</div>");
     }
-
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -234,12 +226,10 @@ $(document).ready(function() {
     gameOver = true;
     playerTwoScore++;
     $("#player-2-score").html(playerTwoScore);
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Player Two Wins</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -253,12 +243,10 @@ $(document).ready(function() {
     gameOver = true;
     cpuScore++;
     $("#player-2-score").html(cpuScore);
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>You Lose</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -270,12 +258,10 @@ $(document).ready(function() {
 
   function playerDraw() {
     gameOver = true;
-
     $("#game-overlay").toggleClass("hidden");
     $("#game-overlay").append("<div class='player-win-title'>Draw</div>");
     $("#game-overlay").append("<div id='play-again' class='continue-options'>Play Again</div>");
     $("#game-overlay").append("<div id='quit' class='continue-options'>Quit</div>");
-
     $("#play-again").on("click", function() {
       advanceScreenToRematch();
     });
@@ -303,7 +289,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#center-left").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#center-right").children().html() === "X") {
@@ -320,7 +305,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#bottom-left").children().html() === "X" &&
     $("#bottom-mid").children().html() === "X" &&
     $("#bottom-right").children().html() === "X") {
@@ -354,7 +338,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-mid").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#bottom-mid").children().html() === "X") {
@@ -371,7 +354,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "X" &&
     $("#center-right").children().html() === "X" &&
     $("#bottom-right").children().html() === "X") {
@@ -405,7 +387,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "X" &&
     $("#center-mid").children().html() === "X" &&
     $("#bottom-left").children().html() === "X") {
@@ -440,7 +421,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#center-left").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#center-right").children().html() === "O") {
@@ -457,7 +437,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#bottom-left").children().html() === "O" &&
     $("#bottom-mid").children().html() === "O" &&
     $("#bottom-right").children().html() === "O") {
@@ -491,7 +470,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-mid").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#bottom-mid").children().html() === "O") {
@@ -508,7 +486,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "O" &&
     $("#center-right").children().html() === "O" &&
     $("#bottom-right").children().html() === "O") {
@@ -542,7 +519,6 @@ $(document).ready(function() {
         cpuWin();
       }
     }
-
     else if($("#top-right").children().html() === "O" &&
     $("#center-mid").children().html() === "O" &&
     $("#bottom-left").children().html() === "O") {
@@ -919,6 +895,7 @@ $(document).ready(function() {
   function cpuGameLogic() {
     if(gameOver === false && playerTurn === "CPU") {
 
+  /* ------------------- View Turn ------------------- */
       console.log(turnCount);
 
   /* -------------------- Turn 1 -------------------- */
@@ -951,39 +928,34 @@ $(document).ready(function() {
 
   /* -------------------- Turn 4 -------------------- */
       if(turnCount === 4) {
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol ||
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#top-left").children().html() === playerOneSymbol) {
           markCpuBoxRandomCardinal();
         }
-
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol ||
         $("#bottom-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol) {
           markCpuBoxRandomCardinal();
         }
-
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
           if($("#top-right").html() === "") {
             markCpuBox($("#top-right"));
           }
         }
-
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
             markCpuBox($("#bottom-left"));
           }
         }
-
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol ||
         $("#top-mid").children().html() === playerOneSymbol &&
@@ -992,28 +964,24 @@ $(document).ready(function() {
             markCpuBox($("#top-right"));
           }
         }
-
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
             markCpuBox($("#bottom-right"));
           }
         }
-
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#top-left").html() === "") {
             markCpuBox($("#top-left"));
           }
         }
-
         else if($("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
             markCpuBox($("#bottom-left"));
           }
         }
-
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol ||
         $("#top-mid").children().html() === playerOneSymbol &&
@@ -1022,71 +990,59 @@ $(document).ready(function() {
             markCpuBox($("#top-left"));
           }
         }
-
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
             markCpuBox($("#bottom-right"));
           }
         }
-
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
         else if($("#center-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
           if($("#bottom-right").html() === "") {
             markCpuBox($("#bottom-right"));
           }
         }
-
         else if($("#center-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
         else if($("#bottom-mid").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
           if($("#bottom-left").html() === "") {
             markCpuBox($("#bottom-left"));
           }
         }
-
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
         else if($("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#center-mid").children().html() === playerOneSymbol) {
           markCpuBoxRandomCorner();
         }
-
       }
 
   /* -------------------- Turn 5 -------------------- */
       if(turnCount === 5) {
-      /* ----- CPU Offense----- */
+      /* ------- CPU Offense ------- */
         if(cpuOffense() === true) {
         }
-
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         else if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol) {
           markCpuBox($("#bottom-left"));
@@ -1122,20 +1078,17 @@ $(document).ready(function() {
         else {
           markCpuBoxRandomCorner();
         }
-
       }
 
   /* -------------------- Turn 6 -------------------- */
       if(turnCount === 6) {
-      /* ----- CPU Offense ----- */
+      /* ------- CPU Offense ------- */
         if(cpuOffense() === true) {
         }
-
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         else if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
@@ -1144,7 +1097,6 @@ $(document).ready(function() {
             markCpuBoxRandomCardinal();
           }
         }
-
         else if($("#top-right").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol) {
@@ -1153,7 +1105,6 @@ $(document).ready(function() {
             markCpuBoxRandomCardinal();
           }
         }
-
         else if($("#bottom-right").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol &&
         $("#top-mid").children().html() === playerOneSymbol) {
@@ -1162,7 +1113,6 @@ $(document).ready(function() {
             markCpuBoxRandomCardinal();
           }
         }
-
         else if($("#bottom-left").children().html() === playerOneSymbol &&
         $("#top-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol) {
@@ -1171,7 +1121,6 @@ $(document).ready(function() {
             markCpuBoxRandomCardinal();
           }
         }
-
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol &&
         $("#bottom-left").children().html() === playerOneSymbol) {
@@ -1180,7 +1129,6 @@ $(document).ready(function() {
             markCpuBoxRandomCorner();
           }
         }
-
         else if($("#top-mid").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol &&
         $("#bottom-right").children().html() === playerOneSymbol) {
@@ -1189,7 +1137,6 @@ $(document).ready(function() {
             markCpuBoxRandomCorner();
           }
         }
-
         else if($("#top-left").children().html() === playerOneSymbol &&
         $("#center-right").children().html() === playerOneSymbol &&
         $("#bottom-mid").children().html() === playerOneSymbol) {
@@ -1198,7 +1145,6 @@ $(document).ready(function() {
             markCpuBoxRandomCorner();
           }
         }
-
         else if($("#bottom-mid").children().html() === playerOneSymbol &&
         $("#center-left").children().html() === playerOneSymbol &&
         $("#top-right").children().html() === playerOneSymbol) {
@@ -1207,58 +1153,48 @@ $(document).ready(function() {
             markCpuBoxRandomCorner();
           }
         }
-
       }
 
   /* -------------------- Turn 7 -------------------- */
       if(turnCount === 7) {
-      /* ----- CPU Offense----- */
+      /* ------- CPU Offense ------- */
         if(cpuOffense() === true) {
         }
-
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         else if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else {
           markCpuBoxRandomCorner();
         }
-
       }
 
   /* -------------------- Turn 8 -------------------- */
       if(turnCount === 8) {
-      /* ----- CPU Offense----- */
+      /* ------- CPU Offense ------- */
         if(cpuOffense() === true) {
         }
-
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         else if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else {
           markCpuBoxRandom();
         }
-
       }
 
   /* -------------------- Turn 9 -------------------- */
       if(turnCount === 9) {
-      /* ----- CPU Offense----- */
+      /* ------- CPU Offense ------- */
         if(cpuOffense() === true) {
         }
-
-      /* ----- CPU Defense ----- */
+      /* ------- CPU Defense ------- */
         else if(cpuDefense() === true) {
         }
-
-      /* ----- CPU Additional Logic ----- */
+      /* --- CPU Additional Logic --- */
         else {
           markCpuBoxRandom();
         }
-
       }
 
       checkWin();
@@ -1278,7 +1214,6 @@ $(document).ready(function() {
         else if(playerOneSymbol === "O") {
           $(currentBox).append("<div class='box-styled box-styled-player-2'>O</div>");
         }
-
         checkWin();
         playerTurn = "CPU";
         turnCount++;
@@ -1288,7 +1223,6 @@ $(document).ready(function() {
         }, 800);
       }
     }
-
     else if(gameMode === "multiPlayer") {
       if(gameOver === false && $(currentBox).html() === "" && playerTurn === 1) {
         if(playerOneSymbol === "X") {
@@ -1320,7 +1254,6 @@ $(document).ready(function() {
       $("#player-2-score").removeClass("active-player");
       $("#player-title-symbol-X").removeClass("symbol-X-color");
       $("#player-title-symbol-O").removeClass("symbol-O-color");
-
       $("#player-1-title").addClass("active-player");
       $("#player-1-score").addClass("active-player");
       if(playerOneSymbol === "X") {
@@ -1335,7 +1268,6 @@ $(document).ready(function() {
       $("#player-1-score").removeClass("active-player");
       $("#player-title-symbol-X").removeClass("symbol-X-color");
       $("#player-title-symbol-O").removeClass("symbol-O-color");
-
       $("#player-2-title").addClass("active-player");
       $("#player-2-score").addClass("active-player");
       if(playerTwoSymbol === "X") {
@@ -1350,7 +1282,6 @@ $(document).ready(function() {
       $("#player-1-score").removeClass("active-player");
       $("#player-title-symbol-X").removeClass("symbol-X-color");
       $("#player-title-symbol-O").removeClass("symbol-O-color");
-
       $("#player-2-title").addClass("active-player");
       $("#player-2-score").addClass("active-player");
       if(cpuSymbol === "X") {
@@ -1378,6 +1309,7 @@ $(document).ready(function() {
       advanceScreenToGameBoard();
     });
   });
+
   $("#multi-player").on("click", function() {
     gameMode = "multiPlayer";
     advanceScreenToSymbolChoice();
