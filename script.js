@@ -896,7 +896,7 @@ $(document).ready(function() {
     if(gameOver === false && playerTurn === "CPU") {
 
   /* ------------------- View Turn ------------------- */
-      console.log(turnCount);
+      /* console.log(turnCount); */
 
   /* -------------------- Turn 1 -------------------- */
       if(turnCount === 1) {
