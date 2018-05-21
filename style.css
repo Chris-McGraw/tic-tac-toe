@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: #F5F5F5;
   overflow: hidden;
 }
 
@@ -228,27 +228,34 @@ body {
   font-family: "Questrial", sans-serif;
   color: darkGray;
   background-color: black;
+  border-top: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
 }
 
 #player-1-title {
   padding-top: 5px;
   text-align: center;
+  border-right: 2px solid black;
 }
 
 #player-1-score {
   padding-top: 2px;
   text-align: center;
+  border-right: 2px solid black;
 }
 
 #player-2-title {
   padding-top: 5px;
   text-align: center;
-
+  border-left: 2px solid black;
 }
 
 #player-2-score {
   padding-top: 2px;
   text-align: center;
+  border-left: 2px solid black;
 }
 
 .symbol-X-color {
@@ -279,6 +286,9 @@ body {
   height: 450px;
   margin: auto;
   z-index: 0;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
 }
 
 .box {
