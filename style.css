@@ -1,23 +1,50 @@
 * {
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box;
+
   user-select: none;
 
   /* border: 1px solid red; */
 }
 
 body {
-  background-color: #F5F5F5;
+  background-color: #8D021F;
   overflow: hidden;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  /* border: 1px dashed red; */
+}
+
+#body-container {
+  position: relative;
+
+  width: 450px;
+  height: 500px;
+
+  /* border: 1px dashed blue; */
 }
 
 /* ----------------------------- Game Overlay ----------------------------- */
 
 #game-overlay {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   width: 450px;
   height: 450px;
-  margin: auto;
+  margin-top: 60px;
+
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
   transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
@@ -218,15 +245,19 @@ body {
 
 #info-container {
   display: grid;
-  grid-template-rows: 25px 25px;
-  grid-template-columns: 225px 225px;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
   width: 450px;
-  height: 50px;
-  margin: auto;
-  margin-top: 80px;
+  height: 60px;
+
   font-size: 18px;
   font-family: "Questrial", sans-serif;
   color: darkGray;
+
   background-color: black;
   border-top: 4px solid black;
   border-left: 4px solid black;
@@ -235,25 +266,37 @@ body {
 }
 
 #player-1-title {
-  padding-top: 5px;
+  grid-row: span 1;
+  grid-column: span 1;
+
+  padding-top: 3px;
   text-align: center;
   border-right: 2px solid black;
 }
 
 #player-1-score {
-  padding-top: 2px;
+  grid-row: span 1;
+  grid-column: span 1;
+
+  padding-top: 3px;
   text-align: center;
   border-right: 2px solid black;
 }
 
 #player-2-title {
-  padding-top: 5px;
+  grid-row: span 1;
+  grid-column: span 1;
+
+  padding-top: 3px;
   text-align: center;
   border-left: 2px solid black;
 }
 
 #player-2-score {
-  padding-top: 2px;
+  grid-row: span 1;
+  grid-column: span 1;
+
+  padding-top: 3px;
   text-align: center;
   border-left: 2px solid black;
 }
@@ -277,21 +320,28 @@ body {
 /* ------------------------------ Game Board ------------------------------ */
 
 #main-container {
-  position: relative;
-  top: -450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   display: grid;
-  grid-template-columns: 150px 150px 150px;
-  grid-template-rows: 150px 150px 150px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
   width: 450px;
   height: 450px;
-  margin: auto;
+  margin-top: 60px;
   z-index: 0;
+
   border-left: 4px solid black;
   border-right: 4px solid black;
   border-bottom: 4px solid black;
 }
 
 .box {
+  display: grid;
+  grid-row: span 1;
+  grid-column: span 1;
+
   background-color: beige;
 }
 
