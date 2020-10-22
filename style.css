@@ -343,14 +343,19 @@ body {
   grid-column: span 1;
 
   background-color: beige;
+
+  cursor: pointer;
 }
 
 .box-styled {
-  margin-top: 40px;
+  padding-top: 40px;
+
   text-align: center;
   text-transform: uppercase;
   font-size: 68px;
   font-family: "Questrial", sans-serif;
+
+  cursor: default !important;
 }
 
 .box-styled-player-2 {
